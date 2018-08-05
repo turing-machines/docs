@@ -82,8 +82,8 @@ theme = "hugo-future-imperfect"
   weight = 3
   identifier = "fa fa-sitemap"
 
-[[menu.main]]
-  name = "About me"
-  url = "/about/"
-  identifier = "fa fa-address-card"
-  weight = 4
+# [[menu.main]]
+#   name = "About me"
+#   url = "/about/"
+#   identifier = "fa fa-address-card"
+#   weight = 4
