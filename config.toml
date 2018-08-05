@@ -8,7 +8,7 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
 
 [Author]
   name = "Jerome Brette"
-  bio = "Jerome Brette's true identity is unknown. Maybe he is a successful blogger or writer. Nobody knows it."
+  bio = "Jerome Brette is a Principal Architect at Ericsson particularly interested in edge network ecosystems, machine learning, big data."
   avatar = "img/avatar.png"
 
 [Params]
@@ -16,15 +16,22 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   description = " Jerome Brette's Personal blog about everything" # Description of your site
   opengraph = true
   twitter_cards = false
-  readmore = false # Show "Read more" button in list if true
+  readmore = true # Show "Read more" button in list if true
   leftsidebar = false # Move sidebar to the left side if true
   authorbox = true
   post_navigation = true
-  postSections = ["posts"]
+  postSections = ["posts", "blog", "news" ]
 
 [Params.widgets]
   search = true # Enable "Search" widget
   recent_articles = true # Enable "Recent arcticles" widget
+  recent_articles_num = 5 # Set the number of articles in the "Recent articles" widget
   categories = true # Enable "Categories" widget
   tags = true # Enable "Tags" widget
   tags_counter = false # Enable counter for each tag in "Tags" widget (disabled by default)
+
+  # Enable "Social" widget, if any of "social_*" set a value
+  # social_twitter = "jebrette"
+  social_linkedin = "jerome-brette-109b8711"
+  social_github = "jbrette"
+  # social_email = "example@example.com"
