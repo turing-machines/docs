@@ -12,7 +12,7 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   avatar = "img/avatar.png"
 
 [Params]
-  subtitle = "Raspberry PI are powerfull play and training ground" # Subtitle of your site
+  subtitle = "Staying sharp by leveraging Raspberry PI as play and training grounds" # Subtitle of your site
   description = " Jerome Brette's Personal blog about everything" # Description of your site
   opengraph = true
   twitter_cards = false
