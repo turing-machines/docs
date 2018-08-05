@@ -35,8 +35,8 @@ theme = "hugo-future-imperfect"
   authorbox = true
   post_navigation = true
 
-  navbarTitle          = "title"
-  viewMorePostLink     = "/post/page/1/"
+  navbarTitle          = "My Edge Network"
+  viewMorePostLink     = "/post/"
   dynamicTitles        = true
   socialAppearAtBottom = true
   socialShare          = true
@@ -72,7 +72,7 @@ theme = "hugo-future-imperfect"
 
 [[menu.main]]
   name = "Blog"
-  url = "/post/page/1/"
+  url = "/post/"
   identifier = "fa fa-newspaper-o"
   weight = 2
 
@@ -83,7 +83,7 @@ theme = "hugo-future-imperfect"
   identifier = "fa fa-sitemap"
 
 [[menu.main]]
-  name = "Tags"
-  url = "/tags/"
-  identifier = "fa fa-tags"
+  name = "About me"
+  url = "/about/"
+  identifier = "fa fa-address-card"
   weight = 4
