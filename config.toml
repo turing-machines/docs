@@ -4,7 +4,7 @@ title = "Jerome Brette's Blog"
 theme = "hugo-future-imperfect"
 preserveTaxonomyNames = true
 paginate = 10
-disqusShortname = "shortname"
+disqusShortname = "jbrette"
 googleAnalytics = "UA-123357787-1" # Enable Google Analytics by entering your tracking id
 pluralizeListTitles = false
 # Set the followings to true as part of your site SEO
@@ -66,7 +66,7 @@ canonifyURLs = true
   disable_highlight = false # set to true to disable Highlight
   highlightjsVersion = "9.11.0"
   highlightjsCDN = "//cdn.bootcss.com"
-  highlightjsLang = ["r", "yaml", "css"]
+  highlightjsLang = ["r", "yaml", "css", "bash", "python", "golang"]
   highlightjsTheme = "github"
   MathJaxCDN = "//cdn.bootcss.com"
   MathJaxVersion = "2.7.1"
@@ -90,17 +90,18 @@ canonifyURLs = true
   # required for proper functionality. HTML is supported within the params.
 [params.intro]
   header    = "Jerome's Blog"
-  paragraph = "Building my edge cloud using using Raspberry PI, keep learning from the opensource community"
+  paragraph = "Building my edge cloud using Raspberry PI, keep learning from the opensource community"
   about     = "About the author"
 
   # This appears at the top of the sidebar above params.intro.header.
   # A width of less than 100px is recommended from a design perspective.
   [params.intro.pic]
-    src       = "/images/logo.jpg"
+    # src       = "images/raspberrypi/IMG_0339.JPG"
+    src       = "images/logo.png"
     # Sets Image to be a cirlce
-    circle    = false
+    circle    = true
     # Sets Image to be Future Imperfect's hexagon
-    imperfect = true
+    # imperfect = true
     width     = ""
     alt       = "avatar"
 
