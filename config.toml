@@ -1,10 +1,24 @@
-baseurl = "/"
+baseurl = "https://jbrette.github.io/"
 title = "Jerome Brette's Blog"
-languageCode = "en-us"
-paginate = "20" # Number of posts per page
-theme = "mainroad"
-disqusShortname = "" # Enable comments by entering your Disqus shortname
 googleAnalytics = "UA-123357787-1" # Enable Google Analytics by entering your tracking id
+
+canonifyurls = true
+disqusShortname = "" # Enable comments by entering your Disqus shortname
+enableRobotsTXT = true
+languageCode = "en-us"
+paginate = 20 # Number of posts per page
+
+pluralizeListTitles = false
+preserveTaxonomyNames = true
+
+layoutdir = "layouts"
+contentdir = "content"
+publishdir = "public"
+theme = "hugo-future-imperfect"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
 
 [Author]
   name = "Jerome Brette"
@@ -13,14 +27,29 @@ googleAnalytics = "UA-123357787-1" # Enable Google Analytics by entering your tr
 
 [Params]
   subtitle = "Staying sharp by leveraging Raspberry PI as play and training grounds" # Subtitle of your site
-  description = " Jerome Brette's Personal blog about everything" # Description of your site
+  description = " Jerome Brette's Blog" # Description of your site
   opengraph = true
   twitter_cards = false
   readmore = true # Show "Read more" button in list if true
   leftsidebar = false # Move sidebar to the left side if true
   authorbox = true
   post_navigation = true
-#  postSections = ["posts", "news"]
+
+  navbarTitle          = "title"
+  viewMorePostLink     = "/post/page/1/"
+  dynamicTitles        = true
+  socialAppearAtBottom = true
+  socialShare          = true
+  socialShareGitHub    = true
+  socialShareLinkedin  = true
+  disable_highlight = false # set to true to disable Highlight
+  highlightjsVersion = "9.11.0"
+  highlightjsCDN = "//cdn.bootcss.com"
+  highlightjsLang = ["json", "yaml", "css", "go", "bash"]
+  highlightjsTheme = "github"
+
+[Params.postAmount]
+  sidebar = 10
 
 [Params.widgets]
   search = true # Enable "Search" widget
@@ -34,4 +63,27 @@ googleAnalytics = "UA-123357787-1" # Enable Google Analytics by entering your tr
   # social_twitter = "jebrette"
   social_linkedin = "jerome-brette-109b8711"
   social_github = "jbrette"
-  # social_email = "example@example.com"
+
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  identifier = "fa fa-home"
+  weight = 1
+
+[[menu.main]]
+  name = "Blog"
+  url = "/post/page/1/"
+  identifier = "fa fa-newspaper-o"
+  weight = 2
+
+[[menu.main]]
+  name = "Categories"
+  url = "/categories/"
+  weight = 3
+  identifier = "fa fa-sitemap"
+
+[[menu.main]]
+  name = "Tags"
+  url = "/tags/"
+  identifier = "fa fa-tags"
+  weight = 4
