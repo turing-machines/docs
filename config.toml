@@ -1,69 +1,115 @@
-baseurl = "https://jbrette.github.io/"
-title = "Jerome Brette's Blog"
-googleAnalytics = "UA-123357787-1" # Enable Google Analytics by entering your tracking id
-
-canonifyurls = true
-disqusShortname = "" # Enable comments by entering your Disqus shortname
-enableRobotsTXT = true
+and = "https://jbrette.github.io/"
 languageCode = "en-us"
-paginate = 20 # Number of posts per page
-
-pluralizeListTitles = false
-preserveTaxonomyNames = true
-
-layoutdir = "layouts"
-contentdir = "content"
-publishdir = "public"
+title = "Jerome Brette's Blog"
 theme = "hugo-future-imperfect"
+preserveTaxonomyNames = true
+paginate = 10
+disqusShortname = "shortname"
+googleAnalytics = "UA-123357787-1" # Enable Google Analytics by entering your tracking id
+pluralizeListTitles = false
+# Set the followings to true as part of your site SEO
+enableRobotsTXT = true
+canonifyURLs = true
 
-[taxonomies]
-  category = "categories"
-  tag = "tags"
 
-[Author]
-  name = "Jerome Brette"
-  bio = "Jerome Brette is a Principal Architect at Ericsson particularly interested in edge network ecosystems, machine learning, big data."
-  avatar = "img/avatar.png"
-
-[Params]
-  subtitle = "Staying sharp by leveraging Raspberry PI as play and training grounds" # Subtitle of your site
-  description = " Jerome Brette's Blog" # Description of your site
-  opengraph = true
-  twitter_cards = false
-  readmore = true # Show "Read more" button in list if true
-  leftsidebar = false # Move sidebar to the left side if true
-  authorbox = true
-  post_navigation = true
-
-  navbarTitle          = "My Edge Network"
+[params]
+  # Sets the meta tag description
+  description = "Jerome Brette's Blog" # Description of your site
+  # Sets the navbarTitle that appears in the top left of the navigation bar
+  navbarTitle          = "building my edge network"
+  # Sets where "View More Posts" links
   viewMorePostLink     = "/post/"
+
+# Optional Params
+  # Sets navbarTitle to match the section of the website
   dynamicTitles        = true
+  # Sets RSS icons to appear on the sidebar with the social media buttons
+  rssAppearAtTop       = true
+  rssAppearAtBottom    = true
+  # Sets Social Media icons to appear on the sidebar
+  socialAppearAtTop    = true
   socialAppearAtBottom = true
+  # Sets Categories to sort by number of posts instead of alphabetical
+  categoriesByCount    = true
+  # set to show or to hide categories in the sidebar
+  showSidebarCategories = true
+  showSidebarTags = true
+  # Sets Estimated Reading Time to appear in post headers
+  includeReadingTime   = true
+  # Sets the Favicon and Version for the site. Default support is for
+  # apple-touch-icon-precomposed.png, favicon.png, favicon.ico, and mstile.png.
+  # These are stored in the favicon folder. See the following for more information:
+  # https://github.com/audreyr/favicon-cheat-sheet
+  loadFavicon          = false
+  faviconVersion       = ""
+  # Sets Social Share links to appear on posts
   socialShare          = true
-  socialShareGitHub    = true
+  # Sets specific share to appear on posts (default behavior is to appear)
+  socialShareTwitter   = true
+  socialShareGoogleplus = true
+  socialShareFacebook  = true
+  socialShareReddit    = true
   socialShareLinkedin  = true
+  socialShareStumbleupon = true
+  socialSharePinterest = true
+  socialShareEmail     = true
+
+  # Load custom CSS or JavaScript files. The variable is an array so that you
+  # can load multiple files if necessary. You can also load the standard theme
+  # files by adding the value, "default".
+  # customCSS            = ["default", "/path/to/file"]
+  # customJS             = ["default", "/path/to/file"]
+  customCSS            = ["default"]
+  customJS             = ["default"]
+
+  # options for highlight.js (version, additional languages, and theme)
   disable_highlight = false # set to true to disable Highlight
   highlightjsVersion = "9.11.0"
   highlightjsCDN = "//cdn.bootcss.com"
-  highlightjsLang = ["json", "yaml", "css", "go", "bash"]
+  highlightjsLang = ["r", "yaml", "css"]
   highlightjsTheme = "github"
+  MathJaxCDN = "//cdn.bootcss.com"
+  MathJaxVersion = "2.7.1"
 
-[Params.postAmount]
-  sidebar = 10
+# Disqus will take priority over Staticman (github.com/eduardoboucas/staticman)
+# due to its ease of use. Feel free to check out both and decide what you would
+# prefer to use. See Staticman.yml for additional settings.
+[params.staticman]
+  # Sets Statiman to be active
+  staticman = false
+  # Sets the location for Staticman to connect to
+  username  = ""
+  repo      = ""
+  branch    = ""
 
-[Params.widgets]
-  search = true # Enable "Search" widget
-  recent_articles = true # Enable "Recent arcticles" widget
-  recent_articles_num = 5 # Set the number of articles in the "Recent articles" widget
-  categories = true # Enable "Categories" widget
-  tags = true # Enable "Tags" widget
-  tags_counter = false # Enable counter for each tag in "Tags" widget (disabled by default)
+  [params.staticman.recaptcha]
+    sitekey = "SITE_KEY"
+    secret  = "ENCRYPTED_SECRET"
 
-  # Enable "Social" widget, if any of "social_*" set a value
-  # social_twitter = "jebrette"
-  social_linkedin = "jerome-brette-109b8711"
-  social_github = "jbrette"
+  # These are optional params related to the sidebar. They are recommended, but not
+  # required for proper functionality. HTML is supported within the params.
+[params.intro]
+  header    = "Jerome's Blog"
+  paragraph = "Building my edge cloud using using Raspberry PI, keep learning from the opensource community"
+  about     = "About the author"
 
+  # This appears at the top of the sidebar above params.intro.header.
+  # A width of less than 100px is recommended from a design perspective.
+  [params.intro.pic]
+    src       = "/images/logo.jpg"
+    # Sets Image to be a cirlce
+    circle    = false
+    # Sets Image to be Future Imperfect's hexagon
+    imperfect = true
+    width     = ""
+    alt       = "avatar"
+
+[params.postAmount]
+# Sets the number of recent posts to show in the sidebar. The default value is 5.
+    sidebar = 10
+
+# Sets the menu items in the navigation bar
+# Identifier prepends a Font Awesome icon to the menu item
 [[menu.main]]
   name = "Home"
   url = "/"
@@ -71,19 +117,81 @@ theme = "hugo-future-imperfect"
   weight = 1
 
 [[menu.main]]
+  name = "About"
+  url = "/about/"
+  identifier = "fa fa-id-card-o"
+  weight = 2
+
+[[menu.main]]
   name = "Blog"
   url = "/post/"
   identifier = "fa fa-newspaper-o"
-  weight = 2
+  weight = 3
+
+[[menu.main]]
+  name = "Tags"
+  url = "/tags/"
+  identifier = "fa fa-list"
+  weight = 4
 
 [[menu.main]]
   name = "Categories"
   url = "/categories/"
-  weight = 3
   identifier = "fa fa-sitemap"
+  weight = 5
 
 # [[menu.main]]
-#   name = "About me"
-#   url = "/about/"
-#   identifier = "fa fa-address-card"
-#   weight = 4
+#   name = "Contact"
+#   url = "/contact/"
+#   identifier = "fa fa-envelope-o"
+#   weight = 6
+
+# Sets Social Media icons to appear and link to your account. Value should be your
+# username unless otherwise noted. These are the icons affected by socialAppearAtTop
+# and socialAppearAtBottom.
+[social]
+  # Coding Communities
+  github           = "jbrette"
+  # gitlab           = ""
+  # stackoverflow    = "" # User Number
+  # bitbucket        = ""
+  # jsfiddle         = ""
+  # codepen          = ""
+  # Visual Art Communities
+  # deviantart       = ""
+  # flickr           = "example"
+  # behance          = ""
+  # dribbble         = ""
+  # Publishing Communities
+  wordpress        = ""
+  medium           = ""
+  # Professional/Business Oriented Communities
+  linkedin         = "jerome-brette-109b8711"
+  # linkedin_company = "examplebusiness"
+  # foursquare       = ""
+  # xing             = ""
+  # slideshare       = ""
+  # Social Networks
+  # facebook         = "example"
+  # googleplus       = ""
+  # reddit           = "example"
+  # quora            = ""
+  # youtube          = ""
+  # vimeo            = ""
+  # whatsapp         = "" # WhatsApp Number
+  # WeChat and QQ need testing.
+  # wechat         = ""
+  # qq             = "" # User ID Number
+  # instagram        = "example"
+  # tumblr           = ""
+  twitter          = "example"
+  # skype            = ""
+  # snapchat         = ""
+  # pinterest        = "example"
+  # telegram         = "example"
+  # vine             = ""
+  # googlescholar    = ""
+  # orcid            = ""
+  # researchgate     = "example"
+  # Email
+  # email            = "example"

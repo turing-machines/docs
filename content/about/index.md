@@ -1,11 +1,10 @@
 ---
 layout: post
-title: About me
+title: About the author
 date: 2018-01-01
-menu: main
-identifier: "fa fa-address-card"
+# menu: main
 ---
 
-wip
+Work in progress
 
 Thanks for reading!
