@@ -1,11 +1,11 @@
-and = "https://jbrette.github.io/"
+and = "http://kubedge.cloud/"
 languageCode = "en-us"
-title = "Jerome Brette's Blog"
+title = "KUBEDGE's Blog"
 theme = "hugo-future-imperfect"
 preserveTaxonomyNames = true
 paginate = 10
-disqusShortname = "jbrette"
-googleAnalytics = "UA-123357787-1" # Enable Google Analytics by entering your tracking id
+disqusShortname = "kubedge"
+# googleAnalytics = "UA-123357787-1" # Enable Google Analytics by entering your tracking id
 pluralizeListTitles = false
 # Set the followings to true as part of your site SEO
 enableRobotsTXT = true
@@ -14,7 +14,7 @@ canonifyURLs = true
 
 [params]
   # Sets the meta tag description
-  description = "Jerome Brette's Blog" # Description of your site
+  description = "KUBEDGE's Blog" # Description of your site
   # Sets the navbarTitle that appears in the top left of the navigation bar
   navbarTitle          = "building my edge network"
   # Sets where "View More Posts" links
@@ -89,8 +89,8 @@ canonifyURLs = true
   # These are optional params related to the sidebar. They are recommended, but not
   # required for proper functionality. HTML is supported within the params.
 [params.intro]
-  header    = "Jerome's Blog"
-  paragraph = "Building my edge cloud using Raspberry PI, keep learning from the opensource community"
+  header    = "KUBEDGE's Blog"
+  paragraph = "5G Edge Network Simulator"
   about     = "About the author"
 
   # This appears at the top of the sidebar above params.intro.header.
@@ -152,7 +152,7 @@ canonifyURLs = true
 # and socialAppearAtBottom.
 [social]
   # Coding Communities
-  github           = "jbrette"
+  github           = "kubedge"
   # gitlab           = ""
   # stackoverflow    = "" # User Number
   # bitbucket        = ""
