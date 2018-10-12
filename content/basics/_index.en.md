@@ -1,12 +1,12 @@
 ---
-title: News
-weight: 6
-pre: "<b>2. </b>"
+title: Basics
+weight: 10 
+pre: "<b>11. </b>"
 chapter: true
 ---
 
-### Chapter 2
+### Chapter 11
 
-# News
+# Basics
 
 Discover what this Hugo theme is all about and the core-concepts behind it.

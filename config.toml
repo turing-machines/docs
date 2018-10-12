@@ -1,7 +1,8 @@
 and = "http://kubedge.cloud/"
 languageCode = "en-us"
 title = "KUBEDGE's Blog"
-theme = "hugo-future-imperfect"
+# theme = "hugo-future-imperfect"
+theme = "hugo-theme-learn"
 preserveTaxonomyNames = true
 paginate = 10
 disqusShortname = "kubedge"
