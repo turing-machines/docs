@@ -1,7 +1,6 @@
 ---
 title: About KUBEDGE
-weight: 6
-pre: "<b>3. </b>"
+weight: 37
 chapter: true
 ---
 
