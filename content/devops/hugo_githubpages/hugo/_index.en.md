@@ -1,6 +1,6 @@
 ---
 title: "Learn Theme for Hugo"
-hidden: false
+hidden: true
 ---
 
 # Hugo learn theme
