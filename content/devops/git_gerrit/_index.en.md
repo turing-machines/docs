@@ -8,3 +8,6 @@ chapter = true
 
 This is a devops/git_gerrit tutorial page
 
+![](/images/hack4easy/gerrithub.png)
+![](/images/hack4easy/github.png)
+

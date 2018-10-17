@@ -8,3 +8,6 @@ chapter = true
 
 This is a devops/hugo_githubpages tutorial page
 
+![](/images/hack4easy/hugo2.png)
+![](/images/hack4easy/hugo.png)
+

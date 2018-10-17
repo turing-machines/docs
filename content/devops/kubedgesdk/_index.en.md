@@ -8,3 +8,5 @@ chapter = true
 
 This is a devops/kubedgesdk tutorial page
 
+![](/images/hack4easy/kubedgesdk.png)
+
