@@ -6,7 +6,7 @@ theme = "hugo-theme-learn"
 preserveTaxonomyNames = true
 paginate = 10
 disqusShortname = "kubedge"
-# googleAnalytics = "UA-123357787-1" # Enable Google Analytics by entering your tracking id
+googleAnalytics = "UA-123357787-1" # Enable Google Analytics by entering your tracking id
 pluralizeListTitles = false
 # Set the followings to true as part of your site SEO
 enableRobotsTXT = true
@@ -17,7 +17,7 @@ canonifyURLs = true
   # Sets the meta tag description
   description = "KUBEDGE's Blog" # Description of your site
   # Sets the navbarTitle that appears in the top left of the navigation bar
-  navbarTitle          = "building my edge network"
+  navbarTitle          = "Building your own learning local edge network"
   # Sets where "View More Posts" links
   viewMorePostLink     = "/post/"
 
