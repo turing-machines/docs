@@ -4,14 +4,18 @@ title: "Kubedge"
 
 # Kubedge
 
+Note: This page and web site is still work in progress.
+
 ## Personal, Portable Edge Network and Lab. 
 
 ![](/images/raspberrypi/IMG_0339.JPG)
+![](/images/raspberrypi/DSC08310.JPG)
 
 
 Kubedge is personal and portable edge cloud. The
 key concept is to leverage the three
 network interfaces available on each PI:
+
 - 1 GB Ethernet
 - Wifi
 - Bluetooth.
@@ -19,34 +23,33 @@ network interfaces available on each PI:
 The PI are interconnected together using the local
 switch. The top/master PI is acting as a NAT/Router
 for the rest of the PI. This main advantage that 
-when you move your lab from home to work, 90% of the
-addresses stay identical. 
+when you move your lab from home to work, all the IPs
+of the cluster stay identical. 
 
 ### DevOps Training
 
-Since each PI acts an cloud node, you need to be able
-to install, manage, test and share the software installed on the nodes.
-Kubedge leverages GitHub and GerritHub to preserve and review code,
-Travis-CI for continuous integration one aspect is to be able
-to build executables and docker image that can run on the broadcom process
-of the PI. The docker images are available to download on docker hub.
+Since each PI acts a cloud node, you need to be able
+to install, manage, test and share the software.
+Kubedge leverages GitHub and GerritHub to share and review code,
+Travis-CI for continuous integration. One key aspect is to be able
+to build executables and docker image that can run on the broadcom processor
+of the PI. The docker images are available to download on dockerhub.
 
 In order to build the present website, we had to understand how to use
 github pages and well as for instance the Hugo framework to convert the
 markdown documents into HTML.
 
 Finally some of the operations are easier to run on your laptop, for
-instance the development of the software. We did create an Ubuntu base
+instance the development of the software. Kubedge team did create an Ubuntu base
 virtual machine using an SDK. 
 
 ### Kubernetes Training Lab
 
-The assembly of the cluster itself brings its lot of lessons. What to
+The assembly of the cluster itself brings its set of lessons. What to
 be carreful of when you purchase your power supply, the length of your
-ethernet cables or power supply cables. You will find numerous video online,
-and you have to adapt them to your cluster. Things like accounting for the 
-fact that the new PI 3B+ have *1Gb* ethernet instead of 100Mb for the PI 3B have
-to be accounted when you pick up your switch. Account for having 1 port available
+ethernet cables or power supply cables. 
+Differences between the PI 3B+ vs PI 3B (*1Gb* ethernet instead of 100Mb) have
+to be accounted when you pick up your switch. Account for having 1 additonal port available
 on your switch to be able to plug your PC to cluster using Ethernet.
 
 Next step is to install the OS. Immediatly you will realize that it is unpracticle
@@ -59,7 +62,7 @@ have to SSH.
 Then you will have to learn how to create a NAT and DHCP server on your master node.
 
 The bigger your cluster the quicker you will realize that some of the operations
-are repetitve, hence the need for automation. The easiet one to learn is ansible. 
+are repetitiv, hence the need for automation. The easiet one to learn is ansible. 
 Put if you install everything on the OS directly, then start the issue of maintaining the OS.
 Because HyperiotOS comes by default with docker, which brings us back to lesson 1: Have everything
 has a container.
@@ -67,6 +70,16 @@ has a container.
 The defacto tools to manage a multi node docker cluster is currently kubernetes. By using
 kubeadm the installation is quite simple as long as you pay attention that the images pulled
 by kubernetes are actually the one for PI and not the one for your usual cloud.
+
+For people with Kubernetes experience (for instance on GCP), this is where the real lessons start:
+- A lot of the software is not available by default on PI. How do you recompile calico, tiller...for the PI.
+- It is much easier to install components using the Kubernetes HELM but a lot of the helm charts are pulling the AMD64 version of the ARM image.
+- Finally, how do you create your own helm chart repository using github so that you can run a clean helm add repo and helm install commands.
+
+And mainly, you will started to appreciate go and the new Java 9 modules to actually create true microservices
+Because both langugage have the ability to create standalone executables, which in turn allow to create containers starting from "scratch".
+Compare it with a python container and you will understand very quickly why it is beneficial. The PI only has 1G of RAM...which helps to understand
+the interest of having slim true microservices.
 
 
 ### LTE and 5G Simulator
@@ -82,9 +95,13 @@ as SGW Gateway are running on the Master PI.
 
 ### NFV/SDN Network Slicing Simulator
 
-### MEC Simulator
+Finally currently when the traffic is following through WIFI to ETH0 on the 5G NR node and from ETH0 to WIFI on the EPC node, the routing of the 
+traffic is done using Linux Kernel mainly.
+The goal here is to build an NFV able to throttle for instance the traffic wifi network (simulating 5G) in order to create a simulation of 
+network slicing. At that point the traffic on the 5G NR node will not go through the kernel but will go from WIFI through the NFV back to ETH0. 
 
-### NFV/SDN Network Slicing Simulator
+
+WIP.
 
 ## Associated GIT Repos
 
