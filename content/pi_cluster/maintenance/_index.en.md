@@ -1,5 +1,5 @@
 +++
-title = "Helm and Maintenace"
+title = "Helm & Maintenance"
 description = "This is pi_cluster/maintenance tutorial page"
 weight = 15 
 pre = "<b>2.3. </b>"

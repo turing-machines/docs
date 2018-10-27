@@ -1,5 +1,6 @@
 ---
-title: Posts
+title: Latest News
+menuTitle: Latest News
 weight: 4 
 chapter: true
 ---

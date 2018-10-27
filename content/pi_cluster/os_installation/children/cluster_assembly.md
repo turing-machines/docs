@@ -18,6 +18,10 @@ This page contains examples of harware to use in order to build a cluster
 
 <!--more-->
 
+## Assembled 3 nodes cluster
+
+![](/images/raspberrypi/DSC08310.JPG)
+
 ## Links
 
 - [PI Rack](https://www.amazon.com/gp/product/B077D4J3M5)

@@ -1,5 +1,6 @@
 +++
 title = "Hugo/GitHubPages"
+menuTitle = "Hugo & GitHub pages"
 description = "This is devops/hugo_githubpages tutorial page"
 weight = 15 
 pre = "<b>1.3. </b>"
