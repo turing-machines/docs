@@ -6,5 +6,7 @@ pre = "<b>3.3. </b>"
 chapter = true
 +++
 
+# WIFI AP and Bluetook PAN
+
 This is a lte_to_5g/rpi_wifi_bluetooth tutorial page
 

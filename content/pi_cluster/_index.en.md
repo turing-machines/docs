@@ -6,7 +6,7 @@ pre = "<b>2. </b>"
 chapter = true
 +++
 
-This is a pi_cluster tutorial page
+# Rapsberry PI Cluster
 
 ![](/images/kubernetes/cluster1_nodes.png)
 ![](/images/kubernetes/cluster1_overview.png)

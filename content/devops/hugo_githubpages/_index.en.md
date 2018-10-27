@@ -6,6 +6,8 @@ pre = "<b>1.3. </b>"
 chapter = true
 +++
 
+# Hugo and GitHub Pages
+
 This is a devops/hugo_githubpages tutorial page
 
 ![](/images/hack4easy/hugo2.png)

@@ -6,6 +6,8 @@ pre = "<b>1.2. </b>"
 chapter = true
 +++
 
+# CI/CD
+
 This is a devops/cicd tutorial page
 
 ![](/images/hack4easy/kubesim_lte.png)
