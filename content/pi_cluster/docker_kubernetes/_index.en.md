@@ -8,5 +8,4 @@ chapter = true
 
 # Docker and Kubernetes
 
-This is a pi_cluster/docker_kubernetes tutorial page
-
+{{%children style="h3" description="false" depth="1" sort="weight" %}}

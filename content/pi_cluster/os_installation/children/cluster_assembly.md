@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Raspberry PI cluster Assembly"
+menuTitle: "HW Assembly"
 date:   2018-07-07
 categories: [wiki]
 description: ""
@@ -13,7 +14,9 @@ tags: [ansible, rpi]
 published: true
 ---
 
-# Goal
+This page contains examples of harware to use in order to build a cluster
+
+<!--more-->
 
 ## Links
 

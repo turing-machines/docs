@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Using Ansible to manage Raspberry PI cluster"
+menuTitle: "Ansible"
 date:   2018-07-07
 categories: [wiki]
 description: ""
@@ -13,11 +14,11 @@ tags: [ansible, rpi]
 published: true
 ---
 
-# Goal
-
 Even if the ultimate goal is to manage completly the cluster using Kubernetes,
 the ability to use Ansible during debug process is very usefull.
 The goal here is to setup ansible inventory, basic playbooks.
+
+<!--more-->
 
 ## Ansible Installation on the master node
 

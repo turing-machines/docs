@@ -8,5 +8,4 @@ chapter = true
 
 # Advanced
 
-This is a pi_cluster/advanced tutorial page
-
+{{%children style="h3" description="false" depth="1" sort="weight" %}}

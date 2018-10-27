@@ -8,11 +8,8 @@ chapter = true
 
 # CI/CD
 
-This is a devops/cicd tutorial page
-
 ![](/images/hack4easy/kubesim_lte.png)
 ![](/images/hack4easy/dockerhub.png)
-
 
 ![](/images/hack4easy/ansible.png)
 ![](/images/hack4easy/callflow.png)
@@ -25,3 +22,4 @@ This is a devops/cicd tutorial page
 ![](/images/hack4easy/os.png)
 ![](/images/hack4easy/oss.png)
 
+{{%children style="h3" description="false" depth="1" sort="weight" %}}

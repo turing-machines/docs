@@ -8,5 +8,4 @@ chapter = true
 
 # OS Installation
 
-This is a pi_cluster/os_installation tutorial page
-
+{{%children style="h3" description="false" depth="1" sort="weight" %}}

@@ -8,5 +8,5 @@ chapter = true
 
 # LTE and 5G Core
 
-This is a lte_to_5g/lte_and_5g_core_simulation tutorial page
+{{%children style="h3" description="false" depth="1" sort="weight" %}}
 

@@ -1,12 +1,11 @@
 +++
-title = "Helm"
+title = "Helm and Maintenace"
 description = "This is pi_cluster/maintenance tutorial page"
 weight = 15 
 pre = "<b>2.3. </b>"
 chapter = true
 +++
 
-# HELM
+# HELM and Maintenance
 
-This is a pi_cluster/maintenance tutorial page
-
+{{%children style="h3" description="false" depth="1" sort="weight" %}}

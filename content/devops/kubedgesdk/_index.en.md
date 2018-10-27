@@ -8,7 +8,6 @@ chapter = true
 
 # KUBEDGE SDK
 
-This is a devops/kubedgesdk tutorial page
-
 ![](/images/hack4easy/kubedgesdk.png)
 
+{{%children style="h3" description="false" depth="1" sort="weight" %}}

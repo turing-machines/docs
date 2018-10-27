@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Create a Rapsberry PI Rescue Dongle"
+menuTitle: "Rescue Dongle"
 date:   2018-06-20
 categories: [wiki]
 description: ""
@@ -13,14 +14,14 @@ tags: [rpi]
 published: true
 ---
 
-# Goal
-
 I encountered multiple issues trying to repartition my SD on my PI.
 Because the / directory is mounted, it never really worked safely for me 
 to use fdisk. Morevoer some of the powerfull tools such as gparted need
 X11 installed, which I don't have by default.
 
 Hopefully the new PI3 B and B+ are able to boot from USB, hence the idea of creating a Rescue Dongle
+
+<!--more-->
 
 ## Consideration regarding USB boot.
 

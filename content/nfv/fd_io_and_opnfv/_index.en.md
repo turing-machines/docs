@@ -8,5 +8,4 @@ chapter = true
 
 # FD.io and OPNFV
 
-This is a nfv/fd_io_and_opnfv tutorial page
-
+{{%children style="h3" description="false" depth="1" sort="weight" %}}

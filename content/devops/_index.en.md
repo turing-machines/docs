@@ -8,5 +8,4 @@ chapter = true
 
 # DevOps
 
-This is a devops tutorial page
-
+{{%children style="h3" description="false" depth="1" sort="weight" %}}

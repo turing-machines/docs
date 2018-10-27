@@ -8,7 +8,4 @@ chapter = true
 
 # Micro Services
 
-This is a pi_cluster/microservices tutorial page
-
-{{%children style="h4" description="true" %}}
-
+{{%children style="h3" description="false" depth="1" sort="weight" %}}

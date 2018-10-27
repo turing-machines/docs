@@ -9,7 +9,9 @@ chapter = true
 # Network Slicing
 
 ![](/images/hack4easy/logo_akraino_edge_stack.png)
+
+{{%children style="h3" description="false" depth="1" sort="weight" %}}
+
 ![](/images/hack4easy/logo_fdio_header.png)
 ![](/images/hack4easy/logo_onap_2017.png)
 ![](/images/hack4easy/opnfv_logo_wp.png)
-
