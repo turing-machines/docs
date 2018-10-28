@@ -39,11 +39,32 @@ Also the Kubedge team went through the process, it has not been documented yet. 
 - [systemctl](https://github.com/kubedge/kube-rpi/blob/master/config/cluster1/hypriotos/kubemaster-pi/etc/sysctl.conf)
 - [dhcpcd](https://github.com/kubedge/kube-rpi/blob/master/config/cluster1/hypriotos/kubemaster-pi/etc/dhcpcd.conf)
 
-## Conclusion
+## Verification
 
 {{% notice note %}}
-WIP
+This is where is important to have a 5 ports switch for a 3 nodes cluster , and a 8 ports switch for a 5 nodes cluster.
 {{% /notice %}}
+
+Plug your laptop onto the switch using an ethernet cable. If the master PI is configured properly (dhcpd, network/eth0..),
+the master PI will acts as a router. It will provide the laptop with an IP address in the **192.168.2.0/255** range.
+
+![](/images/networks/eth0_pict1.png)
+
+SSH to the node.
+```bash
+ssh 192.168.2.1 -l pirate
+```
+
+On your PC itself, open a command prompt or cygwin
+```bash
+ipconfig /all
+```
+![](/images/networks/eth0_pict2.png)
+
+If the previous test is successful, the Name Server list should contain the IP and your home router, and you should be able
+to surf the internet.
+
+![](/images/networks/eth0_pict3.png)
 
 ## Reference Links
 

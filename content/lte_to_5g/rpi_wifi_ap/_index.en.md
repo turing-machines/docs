@@ -9,6 +9,6 @@ chapter = true
 
 # WIFI AP
 
-![](/images/hack4easy/5G_wifi_spectrum_simulator.png)
+![](/images/networks/wlan0_pict1.png)
 
 {{%children style="h3" description="false" depth="1" sort="weight" %}}

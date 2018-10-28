@@ -39,5 +39,3 @@ This page contains examples of harware to use in order to build a cluster
 ## Reference Links
 
 - [Video1](https://www.youtube.com/watch?v=KJKhRLKXr-Q)
-- [Video2](https://www.youtube.com/watch?v=eZ5uX-JJbyY)
-

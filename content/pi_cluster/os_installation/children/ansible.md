@@ -2,7 +2,7 @@
 layout: post
 title:  "Using Ansible to manage Raspberry PI cluster"
 menuTitle: "Ansible"
-weight: 10
+weight: 30
 date:   2018-07-07
 categories: [wiki]
 description: ""

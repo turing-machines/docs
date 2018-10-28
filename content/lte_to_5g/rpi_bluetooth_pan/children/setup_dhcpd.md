@@ -24,7 +24,7 @@ also describe how to setup the DHCPD to automatically allocated IPs to UE or PCs
 ## Key Aspects
 
 - Setup /etc/dhcp/dhcpd.conf.
-- Setup /etc/default/isc-server
+- Setup /etc/default/isc-dhcp-server
 - Setup /etc/systcl.conf 
 - Setup /etc/dhcpcd.conf 
 
@@ -39,10 +39,35 @@ Also the Kubedge team went through the process, it has not been documented yet. 
 - [systemctl](https://github.com/kubedge/kube-rpi/blob/master/config/cluster2/hypriotos/nas-pi/etc/sysctl.conf)
 - [dhcpcd](https://github.com/kubedge/kube-rpi/blob/master/config/cluster2/hypriotos/nas-pi/etc/dhcpcd.conf)
 
-## Conclusion
+## Verification
+
+{{% notice warning %}}
+WIP: The connection to the PAN is still kind of unstable
+{{% /notice %}}
+
+
+On the laptop, under the bluetook icon, use the **Join Personal Area Network**.
+If the worker PI and the master PI are configured properly (dhcpd, network/eth0,pan0)
+the worker PI and master PI will acts as routers. The worker PI will provide the laptop with an IP address in the **192.168.1xx.0/255** range.
+
+![](/images/networks/pan0_pict2.png)
+
+SSH to the node.
+```bash
+ssh 192.168.1xx.1 -l pirate
+```
+
+On your PC itself, open a command prompt or cygwin
+```bash
+ipconfig /all
+```
+![](/images/networks/pan0_pict1.png)
+
+If the previous test is successful, the Name Server list should contain the IP and your home router, and you should be able
+to surf the internet.
 
 {{% notice note %}}
-WIP
+Notice the IP address of the home router *192.168.1.1* in the DNS server list
 {{% /notice %}}
 
 ## Reference Links

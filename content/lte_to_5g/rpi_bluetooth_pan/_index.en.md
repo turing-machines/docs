@@ -7,8 +7,8 @@ pre = "<b>3.2. </b>"
 chapter = true
 +++
 
-# WIFI AP
+# Bluetooth PAN
 
-![](/images/hack4easy/5G_wifi_spectrum_simulator.png)
+![](/images/networks/pan0_pict2.png)
 
 {{%children style="h3" description="false" depth="1" sort="weight" %}}
