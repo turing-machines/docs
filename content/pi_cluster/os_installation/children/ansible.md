@@ -21,6 +21,8 @@ The goal here is to setup ansible inventory, basic playbooks.
 
 <!--more-->
 
+![](/images/hack4easy/ansible.png)
+
 ## Ansible Installation on the master node
 
 Let's install ansible using apt-get. A lot of python related depedencies are also installed.

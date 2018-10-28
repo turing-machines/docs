@@ -9,7 +9,4 @@ chapter = true
 
 # GIT/GERRIT
 
-![](/images/hack4easy/gerrithub.png)
-![](/images/hack4easy/github.png)
-
 {{%children style="h3" description="false" depth="1" sort="weight" %}}

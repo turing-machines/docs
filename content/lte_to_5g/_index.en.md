@@ -22,7 +22,7 @@ as SGW Gateway are running on the Master PI.
 <!--more-->
 
 ![](/images/hack4easy/LTE_to_5G.png)
+![](/images/hack4easy/callflow.png)
 
 {{%children style="h3" description="false" depth="1" sort="weight" %}}
 
-![](/images/hack4easy/5G_wifi_spectrum_simulator.png)

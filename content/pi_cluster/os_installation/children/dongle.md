@@ -2,7 +2,7 @@
 layout: post
 title:  "Create a Rapsberry PI Rescue Dongle"
 menuTitle: "Rescue Dongle"
-weight: 20 
+weight: 25 
 date:   2018-06-20
 categories: [wiki]
 description: ""

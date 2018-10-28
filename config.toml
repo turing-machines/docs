@@ -20,7 +20,7 @@ home = [ "HTML", "RSS", "JSON"]
   # Prefix URL to edit current page. Will display an "Edit this page" button on top right hand corner of every page. 
   # Useful to give opportunity to people to create merge request for your doc.
   # See the config.toml file from this documentation site to have an example.
-  editURL = ""
+  editURL = "https://github.com/kubedge/blog/"
   # Author of the site, will be used in meta information
   author = "Kubedge Team"
   # Description of the site, will be used in meta information
@@ -37,7 +37,7 @@ home = [ "HTML", "RSS", "JSON"]
   # A title for shortcuts in menu is set by default. Set this to true to disable it. 
   disableShortcutsTitle = false
   # When using mulitlingual website, disable the switch language button.
-  disableLanguageSwitchingButton = false
+  disableLanguageSwitchingButton = true
   # Order sections in menu by "weight" or "title". Default to "weight"
   ordersectionsby = "weight"
   # Change default color scheme with a variant one. Can be "red", "blue", "green".
