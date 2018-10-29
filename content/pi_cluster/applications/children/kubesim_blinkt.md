@@ -38,6 +38,5 @@ WIP
 
 ## Reference Links
 
-{{% notice note %}}
-WIP
-{{% /notice %}}
+- [Video1](https://youtu.be/ZyTLMnzehyU?t=1798)
+- [Video2](https://www.youtube.com/watch?v=a7MX6ED2zVM)
