@@ -19,6 +19,8 @@ Install Kubedge Blinkt Application on the PI Cluster
 
 <!--more-->
 
+{{< youtube P83FCYi3kL4 >}}
+
 ## Key Aspects
 
 - Install Blinkt
