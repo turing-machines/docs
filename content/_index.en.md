@@ -9,8 +9,6 @@ chapter = true
 
 ![](/images/raspberrypi/IMG_0339.JPG)
 
-## This GitHub repo/site was compromised by a user on GerritHub. Please take the time to secure your repos (and encourage better security).
-
 ## Personal, Portable Edge Network and Lab. 
 
 Kubedge is personal and portable edge cloud. The
