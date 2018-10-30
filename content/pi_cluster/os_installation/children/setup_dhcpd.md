@@ -45,6 +45,22 @@ Also the Kubedge team went through the process, it has not been documented yet. 
 This is where is important to have a 5 ports switch for a 3 nodes cluster , and a 8 ports switch for a 5 nodes cluster.
 {{% /notice %}}
 
+{{<mermaid>}}
+sequenceDiagram
+    participant PC
+    participant MasterPI
+    participant Internet
+    PC->>MasterPI: Get IP
+    MasterPI->>PC: Return IP in 192.168.2.x
+    PC->>MasterPI: eth0 IP traffic
+    loop kernel
+        MasterPI->MasterPI: eth0 - wlan0 
+    end
+    MasterPI->>Internet: wifi IP traffic
+    Internet->>MasterPI: IP traffic
+    MasterPI->>PC: IP traffic
+{{< /mermaid >}}
+
 Plug your laptop onto the switch using an ethernet cable. If the master PI is configured properly (dhcpd, network/eth0..),
 the master PI will acts as a router. It will provide the laptop with an IP address in the **192.168.2.0/255** range.
 
