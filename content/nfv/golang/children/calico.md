@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Rebuild Calico for AMD64 ad ARM32V7"
+title:  "Rebuild Calico for ARM32V7"
 menuTitle:  "Calico"
 date:   2018-07-17
 categories: [wiki, wip]
@@ -11,11 +11,14 @@ authorbox: true
 toc: true
 mathjax: true
 tags: [kubernetes, calico, cni]
+weight: 15 
 published: true
 ---
 
 Neither calico nor canal seems to be available for usage yet on ARM32V7 for PI.
 The attempt here is to cross-compile the calico containers and use them on the PI cluster.
+Since calico's role is mainly to setup ip table to get Kubernetes POD-POD communication established,
+the likelyhood of being able to reuse some of calico go for a VNF are really slim.
 
 <!--more-->
 
@@ -23,13 +26,17 @@ The attempt here is to cross-compile the calico containers and use them on the P
 
 - Rebuild the Calico 
 
-## Build Kubernetes executables for AMD64 and ARM
+## Build Kubernetes executables for ARM32V7
 
-- WIP
+{{% notice note %}}
+WIP
+{{% /notice %}}
 
 ## Conclusion
 
-- WIP
+{{% notice note %}}
+WIP
+{{% /notice %}}
 
 ## Reference Links
 

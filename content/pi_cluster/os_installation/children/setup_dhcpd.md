@@ -53,8 +53,8 @@ sequenceDiagram
     PC->>MasterPI: Get IP
     MasterPI->>PC: Return IP in 192.168.2.x
     PC->>MasterPI: eth0 IP traffic
-    loop kernel
-        MasterPI->MasterPI: eth0 - wlan0 
+    loop Linux NAT
+        MasterPI->MasterPI: translate eth0 IP into wlan0 IP
     end
     MasterPI->>Internet: wifi IP traffic
     Internet->>MasterPI: IP traffic

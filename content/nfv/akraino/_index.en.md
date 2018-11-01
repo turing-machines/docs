@@ -8,4 +8,6 @@ chapter = true
 
 # Akraino
 
+![](/images/hack4easy/logo_akraino_edge_stack.png)
+
 {{%children style="h3" description="false" depth="1" sort="weight" %}}
