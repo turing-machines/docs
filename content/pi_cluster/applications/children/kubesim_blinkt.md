@@ -2,7 +2,7 @@
 layout: post
 title:  "Installing Kubedge Blinkt"
 menuTitle:  "Blinkt"
-weight: 25
+weight: 15
 date:   2018-09-01
 categories: [wiki, wip]
 description: ""

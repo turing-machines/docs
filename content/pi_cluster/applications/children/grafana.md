@@ -2,7 +2,7 @@
 layout: post
 title:  "Installing Grafana"
 menuTitle:  "Grafana"
-weight: 10 
+weight: 25 
 date:   2018-09-01
 categories: [wiki, wip]
 description: ""

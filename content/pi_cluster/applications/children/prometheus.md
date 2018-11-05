@@ -2,7 +2,7 @@
 layout: post
 title:  "Installing Prometheus"
 menuTitle:  "Prometheus"
-weight: 9 
+weight: 20 
 date:   2018-09-01
 categories: [wiki, wip]
 description: ""

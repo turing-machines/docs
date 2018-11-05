@@ -2,7 +2,7 @@
 layout: post
 title:  "Installing Kubernetes Dashboard"
 menuTitle:  "Dashboard"
-weight: 5
+weight: 10
 date:   2018-09-01
 categories: [wiki, wip]
 description: ""
