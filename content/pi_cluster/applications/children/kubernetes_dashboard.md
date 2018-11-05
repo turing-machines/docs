@@ -61,16 +61,7 @@ helm fetch kubedge2/kubernetes-dashboard-arm32v7
 tar xvf kubernetes-dashboard-arm32v7-0.7.5.tgz
 cd kubernetes-dashboard-arm32v7/
 helm install . --name kubernetes-dashboard 
-
 ```
-
-## Conclusion
-
-{{% notice note %}}
-Still need to debug the Kubernetes Helm Chart.
-{{% /notice %}}
-
-![](/images/kubernetes/cluster2_volumes.png)
 
 ## Source Code
 
@@ -78,6 +69,24 @@ The chart is available under:
 
 - [kubernetes-dashboard](https://github.com/kubedge/kube-rpi/tree/master/charts/kubernetes-dashboard-arm32v7)
 
+## Cleanup
+
+```bash
+kubectl delete -f kubernetes-dashboard-arm.yaml
+
+secret "kubernetes-dashboard-certs" deleted
+serviceaccount "kubernetes-dashboard" deleted
+role.rbac.authorization.k8s.io "kubernetes-dashboard-minimal" deleted
+rolebinding.rbac.authorization.k8s.io "kubernetes-dashboard-minimal" deleted
+deployment.apps "kubernetes-dashboard" deleted
+service "kubernetes-dashboard" deleted
+```
+
+## Conclusion
+
+{{% notice note %}}
+Still need to debug the Kubernetes Helm Chart.
+{{% /notice %}}
 
 ## Reference Links
 

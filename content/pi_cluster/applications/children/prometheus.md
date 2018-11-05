@@ -19,6 +19,8 @@ Install Prometheus on the PI Cluster
 
 <!--more-->
 
+![](/images/prometheus/load-node-stack1.png)
+
 ## Key Aspects
 
 - Install Prometheus
@@ -66,6 +68,15 @@ The chart is available under:
 
 - [prometheus](https://github.com/kubedge/kube-rpi/tree/master/charts/prometheus-arm32v7)
 
+## Cleanup
+
+Run the delete command
+
+```bash
+helm delete --purge prometheus
+
+release "prometheus" deleted
+```
 
 ## Conclusion
 
