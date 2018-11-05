@@ -37,7 +37,7 @@ helm repo update
 
 ### Direct installation from the repo
 
-If you fill lucky:
+If you feel lucky:
 
 ```bash
 helm install kubedge2/grafana-arm32v7 --name grafana 

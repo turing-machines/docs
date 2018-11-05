@@ -42,7 +42,7 @@ No special label needed for kubeplay
 
 ### Direct installation from the repo
 
-If you fill lucky:
+If you feel lucky:
 
 ```bash
 helm install kubedge1/kubeplay-arm32v7 --name kubeplay 

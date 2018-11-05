@@ -47,7 +47,7 @@ kubectl label nodes nas-pi blinktInstalled=true
 
 ### Direct installation from the repo
 
-If you fill lucky:
+If you feel lucky:
 
 ```bash
 helm install kubedge1/kubesim-blinkt-arm32v7 --name blinkt 

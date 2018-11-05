@@ -45,7 +45,7 @@ helm repo update
 
 ### Direct installation from the repo
 
-If you fill lucky:
+If you feel lucky:
 
 ```bash
 helm install kubedge2/kubernetes-dashboard-arm32v7 --name kubernetes-dashboard 
