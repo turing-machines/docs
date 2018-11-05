@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Installing Kubedge 5G NR"
+title:  "Kubedge 5G NR Simulation"
 menuTitle:  "5G NR"
 weight: 20
 date:   2018-09-01

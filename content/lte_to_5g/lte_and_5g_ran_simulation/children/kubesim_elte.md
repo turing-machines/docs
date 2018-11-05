@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Installing Kubedge eLTE"
+title:  "Kubedge eLTE Simulation"
 menuTitle:  "eLTE"
 weight: 15
 date:   2018-09-01

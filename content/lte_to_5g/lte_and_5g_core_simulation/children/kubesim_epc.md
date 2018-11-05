@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Installing Kubedge EPC"
+title:  "Kubedge EPC Simulation"
 menuTitle:  "EPC"
 weight: 10
 date:   2018-09-01

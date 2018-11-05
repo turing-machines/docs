@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Installing Kubedge LTE"
+title:  "Kubedge LTE Simulation"
 menuTitle:  "LTE"
 weight: 10
 date:   2018-09-01

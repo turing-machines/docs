@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Installing Kubedge 5GC"
+title:  "Kubedge 5GC Simulation"
 menuTitle:  "5GC"
 weight: 15
 date:   2018-09-01
