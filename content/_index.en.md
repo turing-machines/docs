@@ -31,7 +31,6 @@ This page and web site is still work in progress.
 
 ## Trainings & Tutorials
 
-{{% children style="li" description="true" depth="1" sort="weight" %}}
 
 ## Associated GIT Repos
 
