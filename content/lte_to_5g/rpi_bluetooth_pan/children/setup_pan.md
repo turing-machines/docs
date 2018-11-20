@@ -31,8 +31,8 @@ This tutorial how to setup PAN on the slave pi to simulator LTE and eLTE RAN.
 Also the Kubedge team went through the process, it has not been documented yet. Still some example files are available bellow.
 {{% /notice %}}
 
-- [pan0](https://github.com/kubedge/kube-rpi/blob/master/config/cluster2/hypriotos/nas-pi/etc/network/interfaces.d/pan0)
-- [dhcpcd](https://github.com/kubedge/kube-rpi/blob/master/config/cluster2/hypriotos/nas-pi/etc/dhcpcd.conf)
+- [pan0](https://github.com/kubedge/kube-rpi/blob/master/config/cluster2/hypriotos.arm32v7/nas-pi/etc/network/interfaces.d/pan0)
+- [dhcpcd](https://github.com/kubedge/kube-rpi/blob/master/config/cluster2/hypriotos.arm32v7/nas-pi/etc/dhcpcd.conf)
 
 ## Conclusion
 

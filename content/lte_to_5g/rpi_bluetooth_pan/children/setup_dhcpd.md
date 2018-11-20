@@ -23,7 +23,7 @@ also describe how to setup the DHCPD to automatically allocated IPs to UE or PCs
 
 ## Key Aspects
 
-- Setup /etc/dhcp/dhcpd.conf.
+- Setup /etc/dhcp/dhcpd.conf
 - Setup /etc/default/isc-dhcp-server
 - Setup /etc/systcl.conf 
 - Setup /etc/dhcpcd.conf 
@@ -34,10 +34,10 @@ also describe how to setup the DHCPD to automatically allocated IPs to UE or PCs
 Also the Kubedge team went through the process, it has not been documented yet. Still some example files are available bellow.
 {{% /notice %}}
 
-- [dhcpd](https://github.com/kubedge/kube-rpi/blob/master/config/cluster2/hypriotos/nas-pi/etc/dhcp/dhcpd.conf)
-- [isc-dhcp-server](https://github.com/kubedge/kube-rpi/blob/master/config/cluster2/hypriotos/nas-pi/etc/default/isc-dhcp-server)
-- [systemctl](https://github.com/kubedge/kube-rpi/blob/master/config/cluster2/hypriotos/nas-pi/etc/sysctl.conf)
-- [dhcpcd](https://github.com/kubedge/kube-rpi/blob/master/config/cluster2/hypriotos/nas-pi/etc/dhcpcd.conf)
+- [dhcpd](https://github.com/kubedge/kube-rpi/blob/master/config/cluster2/hypriotos.arm32v7/nas-pi/etc/dhcp/dhcpd.conf)
+- [isc-dhcp-server](https://github.com/kubedge/kube-rpi/blob/master/config/cluster2/hypriotos.arm32v7/nas-pi/etc/default/isc-dhcp-server)
+- [systemctl](https://github.com/kubedge/kube-rpi/blob/master/config/cluster2/hypriotos.arm32v7/nas-pi/etc/sysctl.conf)
+- [dhcpcd](https://github.com/kubedge/kube-rpi/blob/master/config/cluster2/hypriotos.arm32v7/nas-pi/etc/dhcpcd.conf)
 
 ## Verification
 

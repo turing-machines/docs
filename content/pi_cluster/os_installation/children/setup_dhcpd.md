@@ -26,7 +26,6 @@ also describe how to setup the DHCPD to automatically allocated IPs to PI or PCs
 - Setup /etc/dhcp/dhcpd.conf.
 - Setup /etc/default/isc-server
 - Setup /etc/systcl.conf 
-- Setup /etc/dhcpcd.conf 
 
 ## Deploy
 
@@ -34,10 +33,56 @@ also describe how to setup the DHCPD to automatically allocated IPs to PI or PCs
 Also the Kubedge team went through the process, it has not been documented yet. Still some example files are available bellow.
 {{% /notice %}}
 
-- [dhcpd](https://github.com/kubedge/kube-rpi/blob/master/config/cluster1/hypriotos/kubemaster-pi/etc/dhcp/dhcpd.conf)
-- [isc-dhcp-server](https://github.com/kubedge/kube-rpi/blob/master/config/cluster1/hypriotos/kubemaster-pi/etc/default/isc-dhcp-server)
-- [systemctl](https://github.com/kubedge/kube-rpi/blob/master/config/cluster1/hypriotos/kubemaster-pi/etc/sysctl.conf)
+### DHCP server
+
+We want to install a DHCP server so that the additional PI obtain a IP address in the 192.168.2.1 when connected through the switch.
+
+```bash
+sudo apt-get install isc-dhcp-server
+```
+
+Check the ipforwarding setup
+
+```bash
+diff /etc/sysctl.conf /home/pirate/proj/kubedge/kube-rpi/config/cluster1/hypriotos/kubemaster-pi/etc/sysctl.conf
+vi /etc/sysctl.conf
+```
+
+Check the setup of the dhcp server
+
+```bash
+diff /etc/default/isc-dhcp-server /home/pirate/proj/kubedge/kube-rpi/config/cluster1/hypriotos/kubemaster-pi/etc/default/isc-dhcp-server
+vi /etc/default/isc-dhcp-server
+```
+
+```bash
+sudo service isc-dhcp-server restart
+sudo service isc-dhcp-server status
+```
+
+### Network Address Translation
+
+The Master PI acts as a router from eth0 to wlan0 for the other nodes.
+
+```bash
+sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward"
+sudo iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
+sudo iptables -A FORWARD -i wlan0 -o eth0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+sudo iptables -A FORWARD -i eth0 -o wlan0 -j ACCEPT
+sudo sh -c "iptables-save > /etc/iptables.ipv4.nat"
+```
+
+You can go an uncomment the iptable in the eth0
+```bash
+vi /etc/network/interfaces.d/eth0
+```
+
+### Important Files
+
 - [dhcpcd](https://github.com/kubedge/kube-rpi/blob/master/config/cluster1/hypriotos/kubemaster-pi/etc/dhcpcd.conf)
+- [sysctl.conf](https://github.com/kubedge/kube-rpi/blob/master/config/cluster1/hypriotos/kubemaster-pi/etc/sysctl.conf)
+- [isc-dhcp-server](https://github.com/kubedge/kube-rpi/blob/master/config/cluster1/hypriotos/kubemaster-pi/etc/default/isc-dhcp-server)
+
 
 ## Verification
 

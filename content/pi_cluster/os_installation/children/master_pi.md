@@ -28,8 +28,9 @@ Even if processor is 64bits, OS is still 32bits. (Memory is small anyway).
 Removed cloud-init once the site was up.
 {{% /notice %}}
 
-- Download the operating system from [HypriotOS](https://github.com/hypriot/image-builder-rpi/releases).
-- Flash all 3 or 5 SD cards using **Win32DiskImager** or similar.
+- For simple arm32v7 OS, download the operating system from [HypriotOS ARM32V7](https://github.com/hypriot/image-builder-rpi/releases/download/v1.9.0/hypriotos-rpi-v1.9.0.img.zip)
+- For more complex arm64 OS, download the operating system from [HypriotOS ARM64V8](https://github.com/DieterReuter/image-builder-rpi64/releases/download/v20180429-184538/hypriotos-rpi64-v20180429-184538.img.zip)
+- Flash all 3 or 5 SD cards using **Win32DiskImager** or similar. It takes around 30 seconds per card.
 
 ## OS on master on master PI
 
@@ -50,10 +51,17 @@ Cloud init is perfect for the first boot. Once the node
 is up, it can be challenging not to preserve the fine tuning done
 to the OS.
 
-~~~
+```bash
 sudo apt-get remove --purge cloud-init
 sudo apt-get autoremove
-~~~
+```
+
+Let's update to the latest version
+
+```bash
+sudo apt-get update
+sudo apt-get upgrade
+```
 
 ### Update master PI name 
 
@@ -63,7 +71,19 @@ As root, replace **black-pearl** by **kubemaster-pi**, in the two following file
 sudo -i
 
 vi /etc/hosts
+```
+
+It seems on HypriotOS 64, you need to do
+
+```bash
 vi /etc/hostname
+sudo service hostname restart
+```
+
+It seems on HypriotOS 32, you need to do
+
+```bash
+sudo hostnamectl set-hostname kubemaster-pi
 ```
 
 

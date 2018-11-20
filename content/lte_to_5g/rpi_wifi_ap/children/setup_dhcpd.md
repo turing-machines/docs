@@ -24,7 +24,7 @@ also describe how to setup the DHCPD to automatically allocated IPs to UE or PCs
 ## Key Aspects
 
 - Setup /etc/dhcp/dhcpd.conf.
-- Setup /etc/default/isc-server
+- Setup /etc/default/isc-dhcp-server
 - Setup /etc/systcl.conf 
 - Setup /etc/dhcpcd.conf 
 

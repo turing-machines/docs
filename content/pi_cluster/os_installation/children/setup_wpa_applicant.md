@@ -22,7 +22,7 @@ This tutorial how to setup WIFI on the master pi to connect to different WLAN
 ## Key Aspects
 
 - Setup /etc/wpa_supplicant/wpa_supplicant.
-- Setup /etc/network/interfaaces.d/wlan0.
+- Setup /etc/network/interfaces.d/wlan0.
 - Setup /etc/dhcpcd.conf 
 - Check /etc/resolv.conf
 
@@ -32,12 +32,42 @@ This tutorial how to setup WIFI on the master pi to connect to different WLAN
 Also the Kubedge team went through the process, it has not been documented yet. Still some example files are available bellow.
 {{% /notice %}}
 
+Install dhcpcd5. The dhcpcd service controls the start of the interfaces as well as the creation of the /etc/resolv.conf
+
+### Install DHCPCD
+
+```bash
+sudo apt-get install dhcpcd5
+```
+
+The /etc/dhcpcd.conf (not the /etc/dhcpd/dhcpd.conf) controls the startup of the interfaces. We want the eth0 to be kind of static, the wlan0 to be dynamic
+
+```bash
+diff dhcpcd.conf /home/pirate/proj/kubedge/kube-rpi/config/cluster1/hypriotos/kubemaster-pi/etc/dhcpcd.conf
+```
+
+### Prepare lo and eth0
+
+You can keep 3 files in the /etc/network/interfaces.d: l0, eth0 and wlan0.
+Note comment out the iptables line at first in the eth0 file. eth0 is static so that the internal IP of the master PI is always 192.168.2.1
+
+```bash
+diff lo /home/pirate/proj/kubedge/kube-rpi/config/cluster1/hypriotos/kubemaster-pi/etc/network/interfaces.d/lo
+diff eth0 /home/pirate/proj/kubedge/kube-rpi/config/cluster1/hypriotos/kubemaster-pi/etc/network/interfaces.d/eth0
+```
+
 ### Enable WLAN0.
+
+In wlan0 the list of the sssid you want to potentially connect to. Needs to match the id_str in the wpa_supplicant.conf
+```bash
+vi wlan0
+vi /etc/wpa_supplicant/wpa_supplicant.conf
+```
 
 Check the IP address. Depending on PI3B or PI3B+, the WLAN network may be different.
 Use the files in **$HOME/proj/kubedge/kube-rpi/config/cluster1/hypriotos/** as examples.
 
-~~~
+```bash
 ip a
 iwconfig
 sudo ip link set wlan0 up
@@ -47,7 +77,8 @@ wpa_passphrase <sommessid>
 sudo vi /etc/network/interfaces.d/wlan0
 sudo vi /etc/wpa_supplicant/wpa_supplicant.conf
 sudo systemctl restart dhcpcd 
-~~~
+```
+At that point the wlan0 should come up and IP 192.168.2.1 should be assigned to the master-pi.
 
 ### Examples of files
 
