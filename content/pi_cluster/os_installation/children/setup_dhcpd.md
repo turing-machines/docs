@@ -15,7 +15,7 @@ tags: [dhcpd, rpi]
 published: true
 ---
 
-This tutorial how to setup DHCPD and NAT so that the slave PI can access the 
+This tutorial how to setup DHCPD and NAT so that the slave PI can access the
 internet through the NAT (ETH0->WLAN0) running on Master PI. This tutorial
 also describe how to setup the DHCPD to automatically allocated IPs to PI or PCs.
 
@@ -24,8 +24,8 @@ also describe how to setup the DHCPD to automatically allocated IPs to PI or PCs
 ## Key Aspects
 
 - Setup /etc/dhcp/dhcpd.conf.
-- Setup /etc/default/isc-server
-- Setup /etc/systcl.conf 
+- Setup /etc/default/isc-dhcp-server
+- Setup /etc/systcl.conf
 
 ## Deploy
 
@@ -39,13 +39,6 @@ We want to install a DHCP server so that the additional PI obtain a IP address i
 
 ```bash
 sudo apt-get install isc-dhcp-server
-```
-
-Check the ipforwarding setup
-
-```bash
-diff /etc/sysctl.conf /home/pirate/proj/kubedge/kube-rpi/config/cluster1/hypriotos/kubemaster-pi/etc/sysctl.conf
-vi /etc/sysctl.conf
 ```
 
 Check the setup of the dhcp server
@@ -62,6 +55,14 @@ sudo service isc-dhcp-server status
 
 ### Network Address Translation
 
+Check the ipforwarding setup
+
+```bash
+diff /etc/sysctl.conf /home/pirate/proj/kubedge/kube-rpi/config/cluster1/hypriotos/kubemaster-pi/etc/sysctl.conf
+vi /etc/sysctl.conf
+```
+
+
 The Master PI acts as a router from eth0 to wlan0 for the other nodes.
 
 ```bash
@@ -77,9 +78,9 @@ You can go an uncomment the iptable in the eth0
 vi /etc/network/interfaces.d/eth0
 ```
 
-### Important Files
+### Reference Files
 
-- [dhcpcd](https://github.com/kubedge/kube-rpi/blob/master/config/cluster1/hypriotos/kubemaster-pi/etc/dhcpcd.conf)
+- [dhcpd](https://github.com/kubedge/kube-rpi/blob/master/config/cluster1/hypriotos/kubemaster-pi/etc/dhcp/dhcpd.conf)
 - [sysctl.conf](https://github.com/kubedge/kube-rpi/blob/master/config/cluster1/hypriotos/kubemaster-pi/etc/sysctl.conf)
 - [isc-dhcp-server](https://github.com/kubedge/kube-rpi/blob/master/config/cluster1/hypriotos/kubemaster-pi/etc/default/isc-dhcp-server)
 

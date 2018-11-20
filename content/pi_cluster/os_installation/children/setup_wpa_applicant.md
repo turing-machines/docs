@@ -15,15 +15,16 @@ tags: [wpa_supplicant, rpi]
 published: true
 ---
 
-This tutorial how to setup WIFI on the master pi to connect to different WLAN 
+This tutorial how to setup WIFI on the master pi to connect to different WLAN
 
 <!--more-->
 
 ## Key Aspects
 
-- Setup /etc/wpa_supplicant/wpa_supplicant.
-- Setup /etc/network/interfaces.d/wlan0.
-- Setup /etc/dhcpcd.conf 
+- Setup /etc/wpa_supplicant/wpa_supplicant
+- Setup /etc/network/interfaces.d/wlan0
+- Setup /etc/dhcpcd.conf
+- Setup /etc/resolv.conf.tail
 - Check /etc/resolv.conf
 
 ## Deploy
