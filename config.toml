@@ -43,6 +43,10 @@ home = [ "HTML", "RSS", "JSON"]
   # Change default color scheme with a variant one. Can be "red", "blue", "green".
   themeVariant = "kubedge"
 
+[blackfriday]
+  plainIDAnchors = true
+  hrefTargetBlank = true
+
 # Sets the menu items in the navigation bar
 # Identifier prepends a Font Awesome icon to the menu item
 [[menu.main]]
