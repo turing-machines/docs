@@ -2,7 +2,7 @@
 title = "WIFI AP"
 menuTitle = "WIFI AP"
 description = "This is lte_to_5g/rpi_wifi_bluetooth tutorial page"
-weight = 5 
+weight = 5
 pre = "<b>3.1. </b>"
 chapter = true
 +++

@@ -45,7 +45,7 @@ No special label needed for kubeplay
 If you feel lucky:
 
 ```bash
-helm install kubedge1/kubeplay-arm32v7 --name kubeplay 
+helm install kubedge1/kubeplay-arm32v7 --name kubeplay
 ```
 
 ### Two steps installation from local
@@ -57,7 +57,7 @@ cd $MY_LOCAL_HELM_CHARTS
 helm fetch kubedge1/kubeplay-arm32v7
 tar xvf kubeplay-arm32v7-0.1.0.tgz
 cd kubeplay-arm32v7/
-helm install . --name kubeplay 
+helm install . --name kubeplay
 ```
 
 ## Testing

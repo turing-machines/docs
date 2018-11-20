@@ -22,7 +22,7 @@ This tutorial how to setup WIFI AccessPoint on PI simulating 5G NR node
 ## Key Aspects
 
 - Setup /etc/network/interfaces.d/wlan0.
-- Setup /etc/dhcpcd.conf 
+- Setup /etc/dhcpcd.conf
 - Check /etc/resolv.conf
 
 ## Deploy

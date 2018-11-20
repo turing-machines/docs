@@ -77,7 +77,7 @@ sudo iwlist scan | grep ED
 wpa_passphrase <sommessid>
 sudo vi /etc/network/interfaces.d/wlan0
 sudo vi /etc/wpa_supplicant/wpa_supplicant.conf
-sudo systemctl restart dhcpcd 
+sudo systemctl restart dhcpcd
 ```
 At that point the wlan0 should come up and IP 192.168.2.1 should be assigned to the master-pi.
 

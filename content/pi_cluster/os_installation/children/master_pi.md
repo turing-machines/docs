@@ -2,7 +2,7 @@
 layout: post
 title:  "OS Installation on Master PI"
 menuTitle: "OS on Master PI"
-weight: 10 
+weight: 10
 date:   2018-07-07
 categories: [wiki]
 description: ""
@@ -36,7 +36,7 @@ Removed cloud-init once the site was up.
 
 {{% notice warning %}}
 Do not power up the slaves nodes for right now. Either plug your home router directly to the master PI, or to the switch.
-The goal here is to get an IP address allocated by your home router to the master PI. 
+The goal here is to get an IP address allocated by your home router to the master PI.
 {{% /notice %}}
 
 ### Access the node
@@ -63,7 +63,7 @@ sudo apt-get update
 sudo apt-get upgrade
 ```
 
-### Update master PI name 
+### Update master PI name
 
 As root, replace **black-pearl** by **kubemaster-pi**, in the two following files:
 

@@ -1,7 +1,7 @@
 +++
 title = "NSA vs SA. Option 3"
 description = "This is lte_to_5g/nsa_and_sa tutorial page"
-weight = 25 
+weight = 25
 pre = "<b>3.5. </b>"
 chapter = true
 +++

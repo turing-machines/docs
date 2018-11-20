@@ -2,7 +2,7 @@
 title = "EPC and 5GC"
 menuTitle = "EPC and 5GC"
 description = "This is lte_to_5g/lte_and_5g_core_simulation tutorial page"
-weight = 15 
+weight = 15
 pre = "<b>3.3. </b>"
 chapter = true
 +++

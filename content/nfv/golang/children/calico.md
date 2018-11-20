@@ -11,7 +11,7 @@ authorbox: true
 toc: true
 mathjax: true
 tags: [kubernetes, calico, cni]
-weight: 15 
+weight: 15
 published: true
 ---
 
@@ -24,7 +24,7 @@ the likelyhood of being able to reuse some of calico go for a VNF are really sli
 
 ## Key Aspects
 
-- Rebuild the Calico 
+- Rebuild the Calico
 
 ## Build Kubernetes executables for ARM32V7
 

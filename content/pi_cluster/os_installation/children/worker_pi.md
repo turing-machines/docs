@@ -2,7 +2,7 @@
 layout: post
 title:  "OS Installation on Worker PI"
 menuTitle: "OS on Worker PI"
-weight: 25 
+weight: 25
 date:   2018-07-07
 categories: [wiki]
 description: ""
@@ -33,7 +33,7 @@ plug them to the ethernet switch and enable the power.
 ### Access the node
 
 - Insert the SD card in the worker PI and power it on.
-- SSH to the master PI. 
+- SSH to the master PI.
 - From the master PI, ssh to the new PI. And IP address in 192.168.2.1xx will have been assigned to the new node.
 
 
@@ -53,7 +53,7 @@ sudo apt-get remove --purge cloud-init
 sudo apt-get autoremove
 ~~~
 
-### Update worker PI name 
+### Update worker PI name
 
 As root, replace **black-pearl** by **kube-nodeXX**, in the two following files:
 

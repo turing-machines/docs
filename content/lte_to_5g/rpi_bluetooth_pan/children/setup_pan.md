@@ -22,7 +22,7 @@ This tutorial how to setup PAN on the slave pi to simulator LTE and eLTE RAN.
 ## Key Aspects
 
 - Setup /etc/network/interfaces.d/pan0.
-- Setup /etc/dhcpcd.conf 
+- Setup /etc/dhcpcd.conf
 - Check /etc/resolv.conf
 
 ## Deploy

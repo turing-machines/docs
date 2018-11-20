@@ -1,7 +1,7 @@
 +++
 title = "DevOps"
 description = "This is devops tutorial page"
-weight = 5 
+weight = 5
 pre = "<b>1. </b>"
 chapter = true
 +++
@@ -21,7 +21,7 @@ markdown documents into HTML.
 
 Finally some of the operations are easier to run on your laptop, for
 instance the development of the software. Kubedge team did create an Ubuntu base
-virtual machine using an SDK. 
+virtual machine using an SDK.
 
 <!--more-->
 

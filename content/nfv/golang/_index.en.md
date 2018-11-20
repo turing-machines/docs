@@ -2,7 +2,7 @@
 title = "GO Networking"
 menuTitle = "GO Networking"
 description = "This is nfv/fd_io_and_opnfv tutorial page"
-weight = 10 
+weight = 10
 pre = "<b>4.2. </b>"
 chapter = true
 +++

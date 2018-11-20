@@ -1,7 +1,7 @@
 +++
 title = "Kubedge"
 description = "Main page"
-weight = 1 
+weight = 1
 chapter = true
 +++
 
@@ -9,7 +9,7 @@ chapter = true
 
 ![](/images/raspberrypi/IMG_0339.JPG)
 
-## Personal, Portable Edge Network and Lab. 
+## Personal, Portable Edge Network and Lab.
 
 Kubedge is personal and portable edge cloud. The
 key concept is to leverage the three
@@ -21,9 +21,9 @@ network interfaces available on each PI:
 
 The PI are interconnected together using the local
 switch. The top/master PI is acting as a NAT/Router
-for the rest of the PI. This main advantage that 
+for the rest of the PI. This main advantage that
 when you move your lab from home to work, all the IPs
-of the cluster stay identical. 
+of the cluster stay identical.
 
 {{% notice note %}}
 This page and web site is still work in progress.

@@ -2,7 +2,7 @@
 layout: post
 title:  "Installing Prometheus"
 menuTitle:  "Prometheus"
-weight: 20 
+weight: 20
 date:   2018-09-01
 categories: [wiki, wip]
 description: ""
@@ -38,7 +38,7 @@ helm repo update
 If you feel lucky:
 
 ```bash
-helm install kubedge2/prometheus-arm32v7 --name prometheus 
+helm install kubedge2/prometheus-arm32v7 --name prometheus
 ```
 
 ### Two steps installation from local
@@ -50,7 +50,7 @@ cd $MY_LOCAL_HELM_CHARTS
 helm fetch kubedge2/prometheus-arm32v7
 tar xvf prometheus-arm32v7-7.3.4.tgz
 cd prometheus-arm32v7/
-helm install . --name prometheus 
+helm install . --name prometheus
 ```
 
 ## Source Code

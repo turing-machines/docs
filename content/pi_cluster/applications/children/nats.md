@@ -2,7 +2,7 @@
 layout: post
 title:  "Installing NATS"
 menuTitle:  "NATS"
-weight: 21 
+weight: 21
 date:   2018-11-11
 categories: [wiki, wip]
 description: ""

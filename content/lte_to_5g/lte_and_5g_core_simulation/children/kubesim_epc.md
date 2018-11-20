@@ -38,7 +38,7 @@ Ensure the right labels have been applied to the nodes where EPC is installed
 For instance:
 
 ```bash
-kubectl label nodes kubemaster-pi kubedgeNodeType=lte-core 
+kubectl label nodes kubemaster-pi kubedgeNodeType=lte-core
 ```
 
 ### Direct installation from the repo
@@ -46,7 +46,7 @@ kubectl label nodes kubemaster-pi kubedgeNodeType=lte-core
 If you feel lucky:
 
 ```bash
-helm install hack4easy/kubesim-epc-arm32v7 --name sim-epc 
+helm install hack4easy/kubesim-epc-arm32v7 --name sim-epc
 ```
 
 ### Two steps installation from local
@@ -58,7 +58,7 @@ cd $MY_LOCAL_HELM_CHARTS
 helm fetch hack4easy/kubesim-epc-arm32v7
 tar xvf kubesim-epc-arm32v7-0.1.0.tgz
 cd kubesim-epc-arm32v7/
-helm install . --name sim-epc 
+helm install . --name sim-epc
 ```
 ## Source Code
 

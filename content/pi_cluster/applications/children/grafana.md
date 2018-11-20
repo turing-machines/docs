@@ -2,7 +2,7 @@
 layout: post
 title:  "Installing Grafana"
 menuTitle:  "Grafana"
-weight: 25 
+weight: 25
 date:   2018-09-01
 categories: [wiki, wip]
 description: ""
@@ -40,7 +40,7 @@ helm repo update
 If you feel lucky:
 
 ```bash
-helm install kubedge2/grafana-arm32v7 --name grafana 
+helm install kubedge2/grafana-arm32v7 --name grafana
 ```
 
 ### Two steps installation from local
@@ -52,7 +52,7 @@ cd $MY_LOCAL_HELM_CHARTS
 helm fetch kubedge2/grafana-arm32v7
 tar xvf grafana-arm32v7-1.17.4.tgz
 cd grafana-arm32v7/
-helm install . --name grafana 
+helm install . --name grafana
 ```
 
 ## Source Code

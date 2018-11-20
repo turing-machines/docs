@@ -35,7 +35,7 @@ One version of HypriotOS seems to be available here.
 
 - [64BitImage](https://github.com/DieterReuter/image-builder-rpi64/releases)
 
-## Everything Else 
+## Everything Else
 
 - Upgrade all the Travis-CI and branches to support arm64v8
 - Rebuild all the docker images for the new architecture.

@@ -11,12 +11,12 @@ authorbox: true
 toc: true
 mathjax: true
 tags: [kubernetes, linux bridging, cni]
-weight: 5 
+weight: 5
 published: true
 ---
 
 The first goal is to replace the NAT+DHCP on the worker nodes
-by Linux Bridging setup. All the devices connecting to the 
+by Linux Bridging setup. All the devices connecting to the
 cluser (Wifi AP, Bluetooth or derectly through the internal
 switch would will be in the same IP network).
 

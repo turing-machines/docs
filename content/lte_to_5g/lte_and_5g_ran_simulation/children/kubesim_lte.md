@@ -38,7 +38,7 @@ Ensure the right labels have been applied to the nodes where LTE is installed
 For instance:
 
 ```bash
-kubectl label nodes kubemaster-pi kubedgeNodeType=lte-ran 
+kubectl label nodes kubemaster-pi kubedgeNodeType=lte-ran
 ```
 
 ### Direct installation from the repo
@@ -46,7 +46,7 @@ kubectl label nodes kubemaster-pi kubedgeNodeType=lte-ran
 If you feel lucky:
 
 ```bash
-helm install hack4easy/kubesim-lte-arm32v7 --name sim-lte 
+helm install hack4easy/kubesim-lte-arm32v7 --name sim-lte
 ```
 
 ### Two steps installation from local
@@ -58,7 +58,7 @@ cd $MY_LOCAL_HELM_CHARTS
 helm fetch hack4easy/kubesim-lte-arm32v7
 tar xvf kubesim-lte-arm32v7-0.1.0.tgz
 cd kubesim-lte-arm32v7/
-helm install . --name sim-lte 
+helm install . --name sim-lte
 ```
 ## Source Code
 

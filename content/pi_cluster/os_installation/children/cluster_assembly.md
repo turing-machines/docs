@@ -2,7 +2,7 @@
 layout: post
 title:  "Raspberry PI cluster Assembly"
 menuTitle: "HW Assembly"
-weight: 5 
+weight: 5
 date:   2018-07-07
 categories: [wiki]
 description: ""

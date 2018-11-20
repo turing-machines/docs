@@ -48,7 +48,7 @@ helm repo update
 If you feel lucky:
 
 ```bash
-helm install kubedge2/kubernetes-dashboard-arm32v7 --name kubernetes-dashboard 
+helm install kubedge2/kubernetes-dashboard-arm32v7 --name kubernetes-dashboard
 ```
 
 ### Two steps installation from local
@@ -60,7 +60,7 @@ cd $MY_LOCAL_HELM_CHARTS
 helm fetch kubedge2/kubernetes-dashboard-arm32v7
 tar xvf kubernetes-dashboard-arm32v7-0.7.5.tgz
 cd kubernetes-dashboard-arm32v7/
-helm install . --name kubernetes-dashboard 
+helm install . --name kubernetes-dashboard
 ```
 
 ## Source Code

@@ -50,7 +50,7 @@ kubectl label nodes nas-pi blinktInstalled=true
 If you feel lucky:
 
 ```bash
-helm install kubedge1/kubesim-blinkt-arm32v7 --name blinkt 
+helm install kubedge1/kubesim-blinkt-arm32v7 --name blinkt
 ```
 
 ### Two steps installation from local
@@ -62,7 +62,7 @@ cd $MY_LOCAL_HELM_CHARTS
 helm fetch kubedge1/kubesim-blinkt-arm32v7
 tar xvf kubesim-blinkt-arm32v7-0.1.0.tgz
 cd kubesim-blinkt-arm32v7/
-helm install . --name blinkt 
+helm install . --name blinkt
 ```
 ## Replica Control
 

@@ -2,7 +2,7 @@
 layout: post
 title:  "Create a Rapsberry PI Rescue Dongle"
 menuTitle: "Rescue Dongle"
-weight: 35 
+weight: 35
 date:   2018-06-20
 categories: [wiki]
 description: ""
@@ -16,7 +16,7 @@ published: true
 ---
 
 I encountered multiple issues trying to repartition my SD on my PI.
-Because the / directory is mounted, it never really worked safely for me 
+Because the / directory is mounted, it never really worked safely for me
 to use fdisk. Morevoer some of the powerfull tools such as gparted need
 X11 installed, which I don't have by default.
 
@@ -44,7 +44,7 @@ program_usb_boot_mode=1
 home-pi.kubedge.cloud | FAILED | rc=1 >>
 ~~~
 
-The flag for OTP USB flag is set on the 3B+ (by default on master-pi) and on the 3B where I did add the entry to the config.txt (nas-pi) 
+The flag for OTP USB flag is set on the 3B+ (by default on master-pi) and on the 3B where I did add the entry to the config.txt (nas-pi)
 ~~~
 ansible picluster -i inventory/ -m shell -a "vcgencmd otp_dump | grep 17:"
 

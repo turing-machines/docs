@@ -2,7 +2,7 @@
 title = "ONAP"
 menuTitle = "ONAP"
 description = "ONAP Tutorial"
-weight = 20 
+weight = 20
 +++
 
 # ONAP

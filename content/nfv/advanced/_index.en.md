@@ -1,7 +1,7 @@
 +++
 title = "Advanced & WIP"
 description = "Advanced tutorials and Work In Progress"
-weight = 35 
+weight = 35
 pre = "<b>4.6. </b>"
 chapter = true
 +++

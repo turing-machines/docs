@@ -1,7 +1,7 @@
 +++
 title = "RPI Cluster"
 description = "This is pi_cluster tutorial page"
-weight = 10 
+weight = 10
 pre = "<b>2. </b>"
 chapter = true
 +++
@@ -10,14 +10,14 @@ chapter = true
 
 The assembly of the cluster itself brings its set of lessons. What to
 be carreful of when you purchase your power supply, the length of your
-ethernet cables or power supply cables. 
+ethernet cables or power supply cables.
 Differences between the PI 3B+ vs PI 3B (*1Gb* ethernet instead of 100Mb) have
 to be accounted when you pick up your switch. Account for having 1 additonal port available
 on your switch to be able to plug your PC to cluster using Ethernet.
 
 Next step is to install the OS. Immediatly you will realize that it is unpracticle
 to plug each node one after the other to an HDMI screen, USB mouse and keyboard in
-order to perform the first initalization. Some of the OS such HyperiotOS have the 
+order to perform the first initalization. Some of the OS such HyperiotOS have the
 great idea to preconfigure the node with SSH enabled, docker. This makes every plug
 and play: Flush your SD card, connect the PI to your home router and voila you just
 have to SSH.
@@ -25,7 +25,7 @@ have to SSH.
 Then you will have to learn how to create a NAT and DHCP server on your master node.
 
 The bigger your cluster the quicker you will realize that some of the operations
-are repetitiv, hence the need for automation. The easiet one to learn is ansible. 
+are repetitiv, hence the need for automation. The easiet one to learn is ansible.
 Put if you install everything on the OS directly, then start the issue of maintaining the OS.
 Because HyperiotOS comes by default with docker, which brings us back to lesson 1: Have everything
 has a container.

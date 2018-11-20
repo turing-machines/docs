@@ -46,7 +46,7 @@ kubectl label nodes kubemaster-pi kubedgeNodeType=5g-ran
 If you feel lucky:
 
 ```bash
-helm install hack4easy/kubesim-nr-arm32v7 --name sim-nr 
+helm install hack4easy/kubesim-nr-arm32v7 --name sim-nr
 ```
 
 ### Two steps installation from local
@@ -58,7 +58,7 @@ cd $MY_LOCAL_HELM_CHARTS
 helm fetch hack4easy/kubesim-nr-arm32v7
 tar xvf kubesim-nr-arm32v7-0.1.0.tgz
 cd kubesim-nr-arm32v7/
-helm install . --name sim-nr 
+helm install . --name sim-nr
 ```
 ## Source Code
 

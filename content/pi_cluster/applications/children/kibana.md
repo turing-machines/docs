@@ -2,7 +2,7 @@
 layout: post
 title:  "Installing Kibana"
 menuTitle:  "Kibana & fluentd"
-weight: 30 
+weight: 30
 date:   2018-09-01
 categories: [wiki, wip]
 description: ""

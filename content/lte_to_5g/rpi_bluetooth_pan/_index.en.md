@@ -2,7 +2,7 @@
 title = "Bluetooth PAN"
 menuTitle = "Bluetooth PAN"
 description = "This is Bluetooth PAN tutorial page"
-weight = 10 
+weight = 10
 pre = "<b>3.2. </b>"
 chapter = true
 +++

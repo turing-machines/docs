@@ -15,7 +15,7 @@ tags: [dhcpd, rpi]
 published: true
 ---
 
-This tutorial how to setup DHCPD and NAT so that the UE can access the 
+This tutorial how to setup DHCPD and NAT so that the UE can access the
 internet through the AP & NAT running on LTE & eLTE simulating PI. This tutorial
 also describe how to setup the DHCPD to automatically allocated IPs to UE or PCs.
 
@@ -25,8 +25,8 @@ also describe how to setup the DHCPD to automatically allocated IPs to UE or PCs
 
 - Setup /etc/dhcp/dhcpd.conf
 - Setup /etc/default/isc-dhcp-server
-- Setup /etc/systcl.conf 
-- Setup /etc/dhcpcd.conf 
+- Setup /etc/systcl.conf
+- Setup /etc/dhcpcd.conf
 
 ## Deploy
 

@@ -38,7 +38,7 @@ Ensure the right labels have been applied to the nodes where 5GC is installed
 For instance:
 
 ```bash
-kubectl label nodes kubemaster-pi kubedgeNodeType=5g-core 
+kubectl label nodes kubemaster-pi kubedgeNodeType=5g-core
 ```
 
 ### Direct installation from the repo
@@ -46,7 +46,7 @@ kubectl label nodes kubemaster-pi kubedgeNodeType=5g-core
 If you feel lucky:
 
 ```bash
-helm install hack4easy/kubesim-5gc-arm32v7 --name sim-5gc 
+helm install hack4easy/kubesim-5gc-arm32v7 --name sim-5gc
 ```
 
 ### Two steps installation from local
@@ -58,7 +58,7 @@ cd $MY_LOCAL_HELM_CHARTS
 helm fetch hack4easy/kubesim-5gc-arm32v7
 tar xvf kubesim-5gc-arm32v7-0.1.0.tgz
 cd kubesim-5gc-arm32v7/
-helm install . --name sim-5gc 
+helm install . --name sim-5gc
 ```
 ## Source Code
 
