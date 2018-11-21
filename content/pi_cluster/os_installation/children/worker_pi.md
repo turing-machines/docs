@@ -36,22 +36,45 @@ plug them to the ethernet switch and enable the power.
 - SSH to the master PI.
 - From the master PI, ssh to the new PI. And IP address in 192.168.2.1xx will have been assigned to the new node.
 
-
 ### Freeze your configuration
 
 Cloud init is perfect for the first boot. Once the node
 is up, it can be challenging not to preserve the fine tuning done
 to the OS.
 
-{{% notice warning %}}
-The /etc/resolv.conf on the new node should contain the IP address of your home router if dhcpd is setup properly
-on your master node.
-{{% /notice %}}
-
-~~~
+```bash
 sudo apt-get remove --purge cloud-init
 sudo apt-get autoremove
-~~~
+```
+
+### Update OS
+
+Let's update to the latest version
+
+```bash
+sudo apt-get update
+sudo apt-get upgrade
+```
+
+Gain access to latest docker-ce
+
+```bash
+sudo -i
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
+usermod -aG docker pirate
+```
+
+At the time this article is written 18.09 is not supported yet.
+
+```bash
+sudo apt-cache policy docker-ce
+sudo apt-get remove --purge docker-ce
+sudo apt-get autoremove
+
+sudo apt-get install docker-ce=18.06.1~ce~3-0~debian
+```
 
 ### Update worker PI name
 
@@ -61,8 +84,19 @@ As root, replace **black-pearl** by **kube-nodeXX**, in the two following files:
 sudo -i
 
 vi /etc/hosts
-vi /etc/hostname
 ```
+
+It seems on HypriotOS 64, you need to do
+
+```bash
+sudo hostnamectl set-hostname kubemaster-pi
+```
+
+{{% notice warning %}}
+The /etc/resolv.conf on the new node should contain the IP address of your home router if dhcpd is setup properly
+on your master node.
+{{% /notice %}}
+
 
 ### Update the static IP on the master PI
 
@@ -73,7 +107,7 @@ corrupt the configuration file.
 ```bash
 arp -a
 
-sudo i /etc/dhcpd/dhcpd.conf
+sudo vi /etc/dhcpd/dhcpd.conf
 
 sudo service isc-dhcp-server restart
 ```

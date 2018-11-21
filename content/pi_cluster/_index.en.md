@@ -46,10 +46,9 @@ the interest of having slim true microservices.
 
 <!--more-->
 
-![](/images/kubernetes/cluster1_overview.png)
+![](/images/raspberrypi/IMG_0339.JPG)
 
 {{%children style="h3" description="false" depth="1" sort="weight" %}}
 
-![](/images/kubernetes/cluster1_nodes.png)
-![](/images/kubernetes/cluster2_nodes.png)
+![](/images/raspberrypi/IMG_0344.JPG)
 

@@ -81,6 +81,28 @@ rolebinding.rbac.authorization.k8s.io "kubernetes-dashboard-minimal" deleted
 deployment.apps "kubernetes-dashboard" deleted
 service "kubernetes-dashboard" deleted
 ```
+### Kubernetes Dashboard
+
+#### **Cluster 1**: 5 node clusters
+
+List of the nodes in Cluster 1
+
+![](/images/kubernetes/cluster1_nodes.png)
+
+Kubernetes kube-system overview of Cluster 1
+
+![](/images/kubernetes/cluster1_overview.png)
+
+#### **Cluster 2**: 3 node clusters
+
+List of the nodes in Cluster 2
+
+![](/images/kubernetes/cluster2_nodes.png)
+
+Kubernetes kube-system overview of Cluster 2
+
+![](/images/kubernetes/cluster2_overview.png)
+
 
 ## Conclusion
 

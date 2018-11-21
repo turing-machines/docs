@@ -48,6 +48,13 @@ diff /etc/default/isc-dhcp-server /home/pirate/proj/kubedge/kube-rpi/config/clus
 vi /etc/default/isc-dhcp-server
 ```
 
+Update the dhcpd.conf. Comment out the fix allocation at first until you have access to the eth0 mac address.
+
+```bash
+diff /etc/dhcp/dhcpd.conf /home/pirate/proj/kubedge/kube-rpi/config/cluster1/hypriotos/kubemaster-pi/etc/dhcp/dhcpd.conf
+vi /etc/dhcp/dhcpd.conf
+```
+
 ```bash
 sudo service isc-dhcp-server restart
 sudo service isc-dhcp-server status

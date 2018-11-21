@@ -85,7 +85,6 @@ Create directorties for ansible
 ~~~
 mkdir -p mgt/inventory
 mkdir -p mgt/playbooks
-mkdir -p mgt/rooles
 mkdir -p mgt/roles
 mkdir -p mgt/group_vars
 mkdir -p mgt/files
@@ -96,11 +95,11 @@ Let's check the internal cluster network
 ~~~
 cat /etc/hosts
 
-192.168.2.1 kubemaster-pi.kubepi kubemaster-pi
-192.168.2.101 kube-node01.kubepi kube-node01
-192.168.2.102 kube-node02.kubepi kube-node02
-192.168.2.103 kube-node03.kubepi kube-node03
-192.168.2.104 kube-node04.kubepi kube-node04
+192.168.2.1 kubemaster-pi.clusterX.kubedge.cloud kubemaster-pi
+192.168.2.101 kube-node01.clusterX.kubedge.cloud kube-node01
+192.168.2.102 kube-node02.clusterX.kubedge.cloud kube-node02
+192.168.2.103 kube-node03.clusterX.kubedge.cloud kube-node03
+192.168.2.104 kube-node04.clusterX.kubedge.cloud kube-node04
 ~~~
 
 Let's create an rsa key for Ansible SSH. Note
@@ -122,7 +121,7 @@ ssh-copy-id -i mgtkey.pub pirate@kube-node04
 Create a first ansible host_var. We will use the mgtkey for ssh/ansible.
 ~~~
 cd ~/mgt/inventory/host_vars
-cat kubemaster-pi.kubepi
+cat kubemaster-pi.clusterX.kubedge.cloud
 
 ansible_host: 192.168.2.FOOBAR
 ansible_port: 22
@@ -133,13 +132,13 @@ ansible_ssh_private_key_file: mgtkey
 ~~~
 for i in kube-node01 kube-node02 kube-node03 kube-node04
 do
-cp kubemaster-pi.kubepi $i.kubepi
+cp kubemaster-pi.clusterX.kubedge.cloud $i.clusterX.kubedge.cloud
 done
 ~~~
 
 Replace FOOBAR by the proper value
 ~~~
-vi *.kubepi
+vi *.clusterX.kubedge.cloud
 ~~~
 
 Create the main inventory file
@@ -153,13 +152,13 @@ masters
 workers
 
 [masters]
-kubemaster-pi.kubepi
+kubemaster-pi.clusterX.kubedge.cloud
 
 [workers]
-kube-node01.kubepi
-kube-node02.kubepi
-kube-node03.kubepi
-kube-node04.kubepi
+kube-node01.clusterX.kubedge.cloud
+kube-node02.clusterX.kubedge.cloud
+kube-node03.clusterX.kubedge.cloud
+kube-node04.clusterX.kubedge.cloud
 ~~~
 
 ### Use ansible
@@ -169,23 +168,23 @@ kube-node04.kubepi
 ~~~
 ansible picluster -i inventory/ -m ping
 
-kube-node01.kubepi | SUCCESS => {
+kube-node01.clusterX.kubedge.cloud | SUCCESS => {
     "changed": false,
     "ping": "pong"
 }
-kube-node04.kubepi | SUCCESS => {
+kube-node04.clusterX.kubedge.cloud | SUCCESS => {
     "changed": false,
     "ping": "pong"
 }
-kube-node03.kubepi | SUCCESS => {
+kube-node03.clusterX.kubedge.cloud | SUCCESS => {
     "changed": false,
     "ping": "pong"
 }
-kubemaster-pi.kubepi | SUCCESS => {
+kubemaster-pi.clusterX.kubedge.cloud | SUCCESS => {
     "changed": false,
     "ping": "pong"
 }
-kube-node02.kubepi | SUCCESS => {
+kube-node02.clusterX.kubedge.cloud | SUCCESS => {
     "changed": false,
     "ping": "pong"
 }
@@ -194,7 +193,7 @@ kube-node02.kubepi | SUCCESS => {
 ~~~
 ansible masters -i inventory/ -m ping
 
-kubemaster-pi.kubepi | SUCCESS => {
+kubemaster-pi.clusterX.kubedge.cloud | SUCCESS => {
     "changed": false,
     "ping": "pong"
 }
@@ -203,19 +202,19 @@ kubemaster-pi.kubepi | SUCCESS => {
 ~~~
 ansible workers -i inventory/ -m ping
 
-kube-node01.kubepi | SUCCESS => {
+kube-node01.clusterX.kubedge.cloud | SUCCESS => {
     "changed": false,
     "ping": "pong"
 }
-kube-node03.kubepi | SUCCESS => {
+kube-node03.clusterX.kubedge.cloud | SUCCESS => {
     "changed": false,
     "ping": "pong"
 }
-kube-node02.kubepi | SUCCESS => {
+kube-node02.clusterX.kubedge.cloud | SUCCESS => {
     "changed": false,
     "ping": "pong"
 }
-kube-node04.kubepi | SUCCESS => {
+kube-node04.clusterX.kubedge.cloud | SUCCESS => {
     "changed": false,
     "ping": "pong"
 ~~~
@@ -248,25 +247,25 @@ ansible-playbook -i inventory/ playbooks/aptupdate.yml
 PLAY [picluster] ***************************************************************
 
 TASK [setup] *******************************************************************
-ok: [kubemaster-pi.kubepi]
-ok: [kube-node03.kubepi]
-ok: [kube-node04.kubepi]
-ok: [kube-node02.kubepi]
-ok: [kube-node01.kubepi]
+ok: [kubemaster-pi.clusterX.kubedge.cloud]
+ok: [kube-node03.clusterX.kubedge.cloud]
+ok: [kube-node04.clusterX.kubedge.cloud]
+ok: [kube-node02.clusterX.kubedge.cloud]
+ok: [kube-node01.clusterX.kubedge.cloud]
 
 TASK [update apt] **************************************************************
-changed: [kube-node02.kubepi]
-changed: [kubemaster-pi.kubepi]
-changed: [kube-node01.kubepi]
-changed: [kube-node03.kubepi]
-changed: [kube-node04.kubepi]
+changed: [kube-node02.clusterX.kubedge.cloud]
+changed: [kubemaster-pi.clusterX.kubedge.cloud]
+changed: [kube-node01.clusterX.kubedge.cloud]
+changed: [kube-node03.clusterX.kubedge.cloud]
+changed: [kube-node04.clusterX.kubedge.cloud]
 
 PLAY RECAP *********************************************************************
-kube-node01.kubepi         : ok=2    changed=1    unreachable=0    failed=0
-kube-node02.kubepi         : ok=2    changed=1    unreachable=0    failed=0
-kube-node03.kubepi         : ok=2    changed=1    unreachable=0    failed=0
-kube-node04.kubepi         : ok=2    changed=1    unreachable=0    failed=0
-kubemaster-pi.kubepi       : ok=2    changed=1    unreachable=0    failed=0
+kube-node01.clusterX.kubedge.cloud         : ok=2    changed=1    unreachable=0    failed=0
+kube-node02.clusterX.kubedge.cloud         : ok=2    changed=1    unreachable=0    failed=0
+kube-node03.clusterX.kubedge.cloud         : ok=2    changed=1    unreachable=0    failed=0
+kube-node04.clusterX.kubedge.cloud         : ok=2    changed=1    unreachable=0    failed=0
+kubemaster-pi.clusterX.kubedge.cloud       : ok=2    changed=1    unreachable=0    failed=0
 ~~~
 
 #### Check the version  of kubeadm
@@ -274,19 +273,19 @@ kubemaster-pi.kubepi       : ok=2    changed=1    unreachable=0    failed=0
 ~~~
 ansible picluster -i inventory -m shell -a "kubeadm version"
 
-kube-node04.kubepi | SUCCESS | rc=0 >>
+kube-node04.clusterX.kubedge.cloud | SUCCESS | rc=0 >>
 kubeadm version: &version.Info{Major:"1", Minor:"9", GitVersion:"v1.9.8", GitCommit:"c138b85178156011dc934c2c9f4837476876fb07", GitTreeState:"clean", BuildDate:"2018-05-21T18:53:18Z", GoVersion:"go1.9.3", Compiler:"gc", Platform:"linux/arm"}
 
-kube-node03.kubepi | SUCCESS | rc=0 >>
+kube-node03.clusterX.kubedge.cloud | SUCCESS | rc=0 >>
 kubeadm version: &version.Info{Major:"1", Minor:"9", GitVersion:"v1.9.8", GitCommit:"c138b85178156011dc934c2c9f4837476876fb07", GitTreeState:"clean", BuildDate:"2018-05-21T18:53:18Z", GoVersion:"go1.9.3", Compiler:"gc", Platform:"linux/arm"}
 
-kube-node01.kubepi | SUCCESS | rc=0 >>
+kube-node01.clusterX.kubedge.cloud | SUCCESS | rc=0 >>
 kubeadm version: &version.Info{Major:"1", Minor:"9", GitVersion:"v1.9.8", GitCommit:"c138b85178156011dc934c2c9f4837476876fb07", GitTreeState:"clean", BuildDate:"2018-05-21T18:53:18Z", GoVersion:"go1.9.3", Compiler:"gc", Platform:"linux/arm"}
 
-kubemaster-pi.kubepi | SUCCESS | rc=0 >>
+kubemaster-pi.clusterX.kubedge.cloud | SUCCESS | rc=0 >>
 kubeadm version: &version.Info{Major:"1", Minor:"9", GitVersion:"v1.9.8", GitCommit:"c138b85178156011dc934c2c9f4837476876fb07", GitTreeState:"clean", BuildDate:"2018-05-21T18:53:18Z", GoVersion:"go1.9.3", Compiler:"gc", Platform:"linux/arm"}
 
-kube-node02.kubepi | SUCCESS | rc=0 >>
+kube-node02.clusterX.kubedge.cloud | SUCCESS | rc=0 >>
 kubeadm version: &version.Info{Major:"1", Minor:"9", GitVersion:"v1.9.8", GitCommit:"c138b85178156011dc934c2c9f4837476876fb07", GitTreeState:"clean", BuildDate:"2018-05-21T18:53:18Z", GoVersion:"go1.9.3", Compiler:"gc", Platform:"linux/arm"}
 ~~~
 
@@ -295,19 +294,19 @@ kubeadm version: &version.Info{Major:"1", Minor:"9", GitVersion:"v1.9.8", GitCom
 ~~~
 ansible picluster -i inventory -m shell -a "vcgencmd measure_temp"
 
-kube-node03.kubepi | SUCCESS | rc=0 >>
+kube-node03.clusterX.kubedge.cloud | SUCCESS | rc=0 >>
 temp=36.5'C
 
-kubemaster-pi.kubepi | SUCCESS | rc=0 >>
+kubemaster-pi.clusterX.kubedge.cloud | SUCCESS | rc=0 >>
 temp=49.4'C
 
-kube-node02.kubepi | SUCCESS | rc=0 >>
+kube-node02.clusterX.kubedge.cloud | SUCCESS | rc=0 >>
 temp=33.2'C
 
-kube-node04.kubepi | SUCCESS | rc=0 >>
+kube-node04.clusterX.kubedge.cloud | SUCCESS | rc=0 >>
 temp=34.3'C
 
-kube-node01.kubepi | SUCCESS | rc=0 >>
+kube-node01.clusterX.kubedge.cloud | SUCCESS | rc=0 >>
 temp=32.2'C
 ~~~
 
@@ -317,31 +316,31 @@ Check the components of the PI composing the cluster (Those are PI 3B+)
 ~~~
 ansible picluster -i inventory -m shell -a "lsusb"
 
-kubemaster-pi.kubepi | SUCCESS | rc=0 >>
+kubemaster-pi.clusterX.kubedge.cloud | SUCCESS | rc=0 >>
 Bus 001 Device 004: ID 0424:7800 Standard Microsystems Corp.
 Bus 001 Device 003: ID 0424:2514 Standard Microsystems Corp. USB 2.0 Hub
 Bus 001 Device 002: ID 0424:2514 Standard Microsystems Corp. USB 2.0 Hub
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
-kube-node02.kubepi | SUCCESS | rc=0 >>
+kube-node02.clusterX.kubedge.cloud | SUCCESS | rc=0 >>
 Bus 001 Device 004: ID 0424:7800 Standard Microsystems Corp.
 Bus 001 Device 003: ID 0424:2514 Standard Microsystems Corp. USB 2.0 Hub
 Bus 001 Device 002: ID 0424:2514 Standard Microsystems Corp. USB 2.0 Hub
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
-kube-node01.kubepi | SUCCESS | rc=0 >>
+kube-node01.clusterX.kubedge.cloud | SUCCESS | rc=0 >>
 Bus 001 Device 004: ID 0424:7800 Standard Microsystems Corp.
 Bus 001 Device 003: ID 0424:2514 Standard Microsystems Corp. USB 2.0 Hub
 Bus 001 Device 002: ID 0424:2514 Standard Microsystems Corp. USB 2.0 Hub
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
-kube-node04.kubepi | SUCCESS | rc=0 >>
+kube-node04.clusterX.kubedge.cloud | SUCCESS | rc=0 >>
 Bus 001 Device 004: ID 0424:7800 Standard Microsystems Corp.
 Bus 001 Device 003: ID 0424:2514 Standard Microsystems Corp. USB 2.0 Hub
 Bus 001 Device 002: ID 0424:2514 Standard Microsystems Corp. USB 2.0 Hub
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
-kube-node03.kubepi | SUCCESS | rc=0 >>
+kube-node03.clusterX.kubedge.cloud | SUCCESS | rc=0 >>
 Bus 001 Device 004: ID 0424:7800 Standard Microsystems Corp.
 Bus 001 Device 003: ID 0424:2514 Standard Microsystems Corp. USB 2.0 Hub
 Bus 001 Device 002: ID 0424:2514 Standard Microsystems Corp. USB 2.0 Hub

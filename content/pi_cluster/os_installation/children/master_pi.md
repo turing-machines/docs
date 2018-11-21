@@ -56,11 +56,33 @@ sudo apt-get remove --purge cloud-init
 sudo apt-get autoremove
 ```
 
+### Update OS
+
 Let's update to the latest version
 
 ```bash
 sudo apt-get update
 sudo apt-get upgrade
+```
+
+Gain access to latest docker-ce
+
+```bash
+sudo -i
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
+usermod -aG docker pirate
+```
+
+At the time this article is written 18.09 is not supported yet.
+
+```bash
+sudo apt-cache policy docker-ce
+sudo apt-get remove --purge docker-ce
+sudo apt-get autoremove
+
+sudo apt-get install docker-ce=18.06.1~ce~3-0~debian
 ```
 
 ### Update master PI name
@@ -76,16 +98,8 @@ vi /etc/hosts
 It seems on HypriotOS 64, you need to do
 
 ```bash
-vi /etc/hostname
-sudo service hostname restart
-```
-
-It seems on HypriotOS 32, you need to do
-
-```bash
 sudo hostnamectl set-hostname kubemaster-pi
 ```
-
 
 ### Configure the pirate account
 
@@ -98,6 +112,7 @@ EDITOR=vi
 ```
 Then you need to set up the ssh keys
 Either create a new ssh key (id_rsa, id_rsa.pub) and copy in id_rsa.pub into [GitHub](https://github.com/settings/keys)
+You also need to add those keys in [GerritHub](https://review.gerrithub.io/#/settings/ssh-key)
 
 ```bash
 ssh-keygen
@@ -117,7 +132,6 @@ Since you have ethernet access, it is a good time to install GIT in order to dow
 sudo apt-get update
 sudo apt-get install git
 sudo apt-get install git-review
-```
 
 
 ```bash
@@ -125,39 +139,45 @@ $ mkdir -p $HOME/proj/kubedge
 $ cd $HOME/proj/kubedge
 ```
 
+create a cloneit1.sh file, edit it and run it
 
-create a cloneit1.sh file and run it
+{{% notice info %}}
+If you deployed on ARM64, be sure to replace **arm32v7** by **arm64v8**
+{{% /notice %}}
+
 
 ```bash
 #!/bin/bash
 GOODPATH=`pwd`
 USERID=yourgithubaccount
-for i in helmrepos kubeplay kubesim_5gc kubesim_base kubesim_elte kubesim_epc kubesim_lte kubesim_nr kubesim_blinkt
+for i in helmrepos kubeplay kubesim_5gc kubesim_base kubesim_elte kubesim_epc kubesim_lte kubesim_nr kubesim_blinkt kubesim_nats kubesim_linkio kubedge_utils
 do
 echo "======================================================"
 echo $i
 echo "======================================================"
 # If you want to contribute
 # git clone -b arm32v7 ssh://$USERID@review.gerrithub.io:29418/kubedge/$i && scp -p -P 29418 $USERID@review.gerrithub.io:hooks/commit-msg $i/.git/hooks/
-git clone -b arm32v7 git@github.com:kubedge/$i.git
+# If you want to just pull the code
+# git clone -b arm32v7 git@github.com:kubedge/$i.git
 cd $GOODPATH
 done
 ```
 
-create a cloneit2.sh file and run it
+create a cloneit2.sh file, edit it and run it
 
 ``` bash
 #!/bin/bash
 GOODPATH=`pwd`
 USERID=yourgithubaccount
-for i in kube-rpi ansible-kube-rpi kubedge
+for i in kube-rpi ansible-kube-rpi
 do
 echo "======================================================"
 echo $i
 echo "======================================================"
 # If you want to contribute
 # git clone ssh://$USERID@review.gerrithub.io:29418/kubedge/$i && scp -p -P 29418 $USERID@review.gerrithub.io:hooks/commit-msg $i/.git/hooks/
-git clone git@github.com:kubedge/$i.git
+# If you want to just pull the code
+# git clone git@github.com:kubedge/$i.git
 cd $GOODPATH
 done
 ```
@@ -166,7 +186,6 @@ done
 You know have access especially through **kube-rpi** and **ansible-kube-rpi** to example files and ansible playbook usefull to install your first node:
 **cd $HOME/proj/kubedge/kube-rpi/config/cluster1/hypriotos/kubemaster-pi**
 {{% /notice %}}
-
 
 ## Reference Links
 
