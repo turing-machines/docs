@@ -1,4 +1,4 @@
-and = "http://kubedge.cloud/"
+baseURL = "https://kubedge.cloud/"
 languageCode = "en-us"
 title = "KUBEDGE's Blog"
 # theme = "hugo-future-imperfect"
@@ -6,7 +6,7 @@ theme = "hugo-theme-learn"
 preserveTaxonomyNames = true
 paginate = 10
 disqusShortname = "kubedge"
-googleAnalytics = "UA-123357787-1" # Enable Google Analytics by entering your tracking id
+googleAnalytics = "UA-123357787-2" # Enable Google Analytics by entering your tracking id
 pluralizeListTitles = false
 # Set the followings to true as part of your site SEO
 enableRobotsTXT = true
