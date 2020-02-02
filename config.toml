@@ -1,4 +1,4 @@
-baseURL = "https://turing-machines.github.io"
+baseURL = "https://docs.turingpi.com"
 languageCode = "en-us"
 title = "Turing Machines Documentation"
 # theme = "hugo-future-imperfect"
