@@ -1,130 +1,57 @@
 +++
-title = "Kubedge"
-description = "Main page"
-weight = 1
+title = "Turing Machines"
+description = "This is Turing Machines welcome page"
+weight = 10
 chapter = true
 +++
 
-# Kubedge
+# Turing Machines
 
-![](/images/raspberrypi/IMG_0339.JPG)
+## Personal, Mobile Edge Computers and Lab
 
-## Personal, Portable Edge Network and Lab.
+Turing Pi is personal and mobile edge cloud. The
+key concept is to leverage the 7 network
+interfaces available on each Raspberry Pi Compute Module.
 
-Kubedge is personal and portable edge cloud. The
-key concept is to leverage the three
-network interfaces available on each PI:
+![](https://turingpi.com/img/index-turingpi-clusteboard-1.svg?1)
 
-- 1 GB Ethernet
-- Wifi
-- Bluetooth.
-
-The PI are interconnected together using the local
-switch. The top/master PI is acting as a NAT/Router
-for the rest of the PI. This main advantage that
-when you move your lab from home to work, all the IPs
+The Raspberry Pi Compute Modules are interconnected together using the onboard
+1 Gbps switch. The Turing top/master node is acting as a NAT/Router
+for the rest of the compute modules. This main advantage that
+when you move your cluster from home to work, all the IPs
 of the cluster stay identical.
 
-{{% notice note %}}
-This page and web site is still work in progress.
-{{% /notice %}}
+Next step is to install the OS. Immediatly you will realize that it is unpracticle
+to plug each node one after the other to an HDMI screen, USB mouse and keyboard in
+order to perform the first initalization. Some of the OS such Hypriot OS have the
+great idea to preconfigure the node with SSH enabled, docker. This makes every plug
+and play: Flush your SD card, connect the PI to your home router and voila you just
+have to SSH.
 
-## Trainings & Tutorials
+Then you will have to learn how to create a NAT and DHCP server on your master node.
 
+The bigger your cluster the quicker you will realize that some of the operations
+are repetitiv, hence the need for automation. The easiet one to learn is ansible.
+Put if you install everything on the OS directly, then start the issue of maintaining the OS.
+Because Hypriot OS comes by default with docker, which brings us back to lesson 1: Have everything
+has a container.
 
-## Associated GIT Repos
+The defacto tools to manage a multi node docker cluster is currently kubernetes. By using
+kubeadm the installation is quite simple as long as you pay attention that the images pulled
+by kubernetes are actually the one for PI and not the one for your usual cloud.
 
-master branch is mainly used for dev.
-arm32v7 branch contains stable code for Rasberry PI.
-amd64 branch contains stable code for AMD64 cluster
+For people with Kubernetes experience (for instance on GCP), this is where the real lessons start:
+- A lot of the software is not available by default on PI. How do you recompile calico, tiller...for the PI.
+- It is much easier to install components using the Kubernetes HELM but a lot of the helm charts are pulling the AMD64 version of the ARM image.
+- Finally, how do you create your own helm chart repository using github so that you can run a clean helm add repo and helm install commands.
 
-SIMULATOR REPOS:
+And mainly, you will started to appreciate go and the new Java 9 modules to actually create true microservices
+Because both language have the ability to create standalone executables, which in turn allow to create containers starting from "scratch".
+Compare it with a python container and you will understand very quickly why it is beneficial. The PI only has 1G of RAM...which helps to understand
+the interest of having slim true microservices.
 
-- [kubesim_base](https://github.com/kubedge/kubesim_base)
-- [kubesim_5gc](https://github.com/kubedge/kubesim_5gc)
-- [kubesim_elte](https://github.com/kubedge/kubesim_elte)
-- [kubesim_epc](https://github.com/kubedge/kubesim_epc)
-- [kubesim_lte](https://github.com/kubedge/kubesim_lte)
-- [kubesim_nr](https://github.com/kubedge/kubesim_nr)
+<!--more-->
 
-TUTORIAL REPOS:
+{{%children style="h3" description="false" depth="1" sort="weight" %}}
 
-- [kubedge](https://github.com/kubedge/kubedge)
-- [kubeplay](https://github.com/kubedge/kubeplay)
-
-## Infrastructure Repos
-
-INFRASTRUCTURE REPOS:
-
-- [kube-rpi](https://github.com/kubedge/kube-rpi)
-- [ansible-kube-rpi](https://github.com/kubedge/ansible-kube-rpi)
-
-## Docker imagesi for PI
-
-SIMULATOR DOCKER IMAGES FOR PI:
-
-- [kubesim_base](https://hub.docker.com/r/hack4easy/kubesim_base-arm32v7)
-- [kubesim_5gc](https://hub.docker.com/r/hack4easy/kubesim_5gc-arm32v7)
-- [kubesim_elte](https://hub.docker.com/r/hack4easy/kubesim_elte-arm32v7)
-- [kubesim_epc](https://hub.docker.com/r/hack4easy/kubesim_epc-arm32v7)
-- [kubesim_lte](https://hub.docker.com/r/hack4easy/kubesim_lte-arm32v7)
-- [kubesim_nr](https://hub.docker.com/r/hack4easy/kubesim_nr-arm32v7)
-
-TUTORIAL REPOS FOR PI:
-
-- [kubedge](https://hub.docker.com/r/kubedge1/kubedge-arm32v7)
-- [kubeplay](https://hub.docker.com/r/kubedge1/kubeplay-arm32v7)
-
-## Docker images for AMD64
-
-SIMULATOR DOCKER IMAGES FOR AMD64:
-
-- [kubesim_base](https://hub.docker.com/r/hack4easy/kubesim_base-amd64)
-- [kubesim_5gc](https://hub.docker.com/r/hack4easy/kubesim_5gc-amd64)
-- [kubesim_elte](https://hub.docker.com/r/hack4easy/kubesim_elte-amd64)
-- [kubesim_epc](https://hub.docker.com/r/hack4easy/kubesim_epc-amd64)
-- [kubesim_lte](https://hub.docker.com/r/hack4easy/kubesim_lte-amd64)
-- [kubesim_nr](https://hub.docker.com/r/hack4easy/kubesim_nr-amd64)
-
-TUTORIAL REPOS FOR AMD64:
-
-- [kubedge](https://hub.docker.com/r/kubedge1/kubedge-amd64)
-- [kubeplay](https://hub.docker.com/r/kubedge1/kubeplay-amd64)
-
-
-## HELM REPOS
-
-- [helmrepos](https://github.com/kubedge/helmrepos)
-
-## Gerrit Review
-
-SIMULATOR REPOS:
-
-- [kubesim_base](https://review.gerrithub.io/#/admin/projects/kubedge/kubesim_base)
-- [kubesim_5gc](https://review.gerrithub.io/#/admin/projects/kubedge/kubesim_5gc)
-- [kubesim_elte](https://review.gerrithub.io/#/admin/projects/kubedge/kubesim_elte)
-- [kubesim_epc](https://review.gerrithub.io/#/admin/projects/kubedge/kubesim_epc)
-- [kubesim_lte](https://review.gerrithub.io/#/admin/projects/kubedge/kubesim_lte)
-- [kubesim_nr](https://review.gerrithub.io/#/admin/projects/kubedge/kubesim_nr)
-
-TUTORIAL REPOS:
-
-- [kubedge](https://review.gerrithub.io/#/admin/projects/kubedge/kubedge)
-- [kubeplay](https://review.gerrithub.io/#/admin/projects/kubedge/kubeplay)
-
-## Automatic Build Review
-
-SIMULATOR REPOS:
-
-- [kubesim_base](https://travis-ci.com/kubedge/kubesim_base)
-- [kubesim_5gc](https://travis-ci.com/kubedge/kubesim_5gc)
-- [kubesim_elte](https://travis-ci.com/kubedge/kubesim_elte)
-- [kubesim_epc](https://travis-ci.com/kubedge/kubesim_epc)
-- [kubesim_lte](https://travis-ci.com/kubedge/kubesim_lte)
-- [kubesim_nr](https://travis-ci.com/kubedge/kubesim_nr)
-
-TUTORIAL REPOS:
-
-- [kubedge](https://travis-ci.com/kubedge/kubedge)
-- [kubeplay](https://travis-ci.com/kubedge/kubeplay)
-
+![](/images/turing_pi/turing_pi_modules.jpg)

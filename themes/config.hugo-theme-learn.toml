@@ -1,12 +1,12 @@
-baseURL = "http://kubedge.cloud/"
+baseURL = "https://turing-machines.github.io"
 languageCode = "en-us"
-title = "KUBEDGE's Blog"
+title = "Turing Machines Documentation"
 # theme = "hugo-future-imperfect"
 theme = "hugo-theme-learn"
 preserveTaxonomyNames = true
 paginate = 10
-disqusShortname = "kubedge"
-googleAnalytics = "UA-123357787-2" # Enable Google Analytics by entering your tracking id
+disqusShortname = "turingpi"
+# googleAnalytics = "UA-123357787-2" # Enable Google Analytics by entering your tracking id
 pluralizeListTitles = false
 # Set the followings to true as part of your site SEO
 enableRobotsTXT = true
@@ -17,24 +17,24 @@ canonifyURLs = true
 home = [ "HTML", "RSS", "JSON"]
 
 [params]
-  # Prefix URL to edit current page. Will display an "Edit this page" button on top right hand corner of every page. 
+  # Prefix URL to edit current page. Will display an "Edit this page" button on top right hand corner of every page.
   # Useful to give opportunity to people to create merge request for your doc.
   # See the config.toml file from this documentation site to have an example.
   editURL = ""
   # Author of the site, will be used in meta information
-  author = "Kubedge Team"
+  author = "Turing Machines Team"
   # Description of the site, will be used in meta information
-  description = "KUBEDGE" # Description of your site
+  description = "Turing Machines Documentation" # Description of your site
   # Shows a checkmark for visited pages on the menu
   showVisitedLinks = false
   # Disable search function. It will hide search bar
   disableSearch = false
-  # Javascript and CSS cache are automatically busted when new version of site is generated. 
+  # Javascript and CSS cache are automatically busted when new version of site is generated.
   # Set this to true to disable this behavior (some proxies don't handle well this optimization)
   disableAssetsBusting = false
   # Set this to true to disable copy-to-clipboard button for inline code.
   disableInlineCopyToClipBoard = false
-  # A title for shortcuts in menu is set by default. Set this to true to disable it. 
+  # A title for shortcuts in menu is set by default. Set this to true to disable it.
   disableShortcutsTitle = false
   # When using mulitlingual website, disable the switch language button.
   disableLanguageSwitchingButton = false
@@ -80,7 +80,7 @@ home = [ "HTML", "RSS", "JSON"]
 # and socialAppearAtBottom.
 [social]
   # Coding Communities
-  github           = "kubedge"
+  github           = "turing-machines"
   # gitlab           = ""
   # stackoverflow    = "" # User Number
   # bitbucket        = ""
@@ -95,7 +95,7 @@ home = [ "HTML", "RSS", "JSON"]
   wordpress        = ""
   medium           = ""
   # Professional/Business Oriented Communities
-  linkedin         = "jerome-brette-109b8711"
+  linkedin         = ""
   # linkedin_company = "examplebusiness"
   # foursquare       = ""
   # xing             = ""
@@ -113,7 +113,7 @@ home = [ "HTML", "RSS", "JSON"]
   # qq             = "" # User ID Number
   # instagram        = "example"
   # tumblr           = ""
-  twitter          = "example"
+  twitter          = "turingpi"
   # skype            = ""
   # snapchat         = ""
   # pinterest        = "example"
@@ -123,4 +123,4 @@ home = [ "HTML", "RSS", "JSON"]
   # orcid            = ""
   # researchgate     = "example"
   # Email
-  # email            = "example"
+  email            = "ask@turingpi.com"

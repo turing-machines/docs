@@ -1,12 +1,12 @@
-baseURL = "http://kubedge.cloud/"
+baseURL = "http://192.168.0.73:5000/"
 languageCode = "en-us"
-title = "KUBEDGE's Blog"
+title = "Turing Machines Documentation"
 # theme = "hugo-future-imperfect"
 theme = "hugo-theme-learn"
 preserveTaxonomyNames = true
 paginate = 10
-disqusShortname = "kubedge"
-googleAnalytics = "UA-123357787-2" # Enable Google Analytics by entering your tracking id
+disqusShortname = "turingpi"
+# googleAnalytics = "UA-123357787-2" # Enable Google Analytics by entering your tracking id
 pluralizeListTitles = false
 # Set the followings to true as part of your site SEO
 enableRobotsTXT = true
@@ -15,7 +15,7 @@ canonifyURLs = true
 
 [params]
   # Sets the meta tag description
-  description = "KUBEDGE's Blog" # Description of your site
+  description = "Turing Machines Documentation" # Description of your site
   # Sets the navbarTitle that appears in the top left of the navigation bar
   navbarTitle          = "Building your own learning local edge network"
   # Sets where "View More Posts" links
