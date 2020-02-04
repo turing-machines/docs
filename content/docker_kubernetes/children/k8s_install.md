@@ -15,29 +15,25 @@ tags: [kubernetes, rpi]
 published: true
 ---
 
-Also GCE is perfect to learn Kubernetes, building Kubernetes on top of Turing Pi brings another dimension to the edge computing and learning, from setting up the OS, partitionning the OS, DHCP, NAT, cross compiling for the ARM32V7.
+Building Kubernetes on top of Turing Pi brings another dimension to the edge computing and learning, from setting up the OS, partitionning the OS, DHCP, NAT, cross compiling for the ARM32V7.
 
 <!--more-->
 
-## Key Aspects
+### Key Aspects
 
 - Assemble a Turing Pi Cluster
 - Deploy Kubernetes on Turing Pi
 
-## Kubernetes for ARM32V7
-
-The current version is Kubernetes 12.2.2
-
-#### On Master and Slaves
-
-Team did not automate yet the installation of kubeadm on each node
+### Prepare master and workers
 
 ```bash
 sudo -i
 
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" > /etc/apt/sources.list.d/kubernetes.list
-apt-get update && apt-get install -y kubeadm kubectl kubelet
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | \
+sudo apt-key add - && echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | \
+sudo tee /etc/apt/sources.list.d/kubernetes.list && sudo apt-get update -q
+
+sudo apt-get install -qy kubelet kubectl kubeadm
 ```
 
 To help during the initialization phase, get kubeadm to download the images onto docker
@@ -46,12 +42,12 @@ To help during the initialization phase, get kubeadm to download the images onto
 kubeadm config images pull
 ```
 
-#### Initialize the Kubernetes Master node
+### Initialize the Kubernetes master node
 
 ```bash
-kubeadm init --pod-network-cidr 10.244.0.0/16 --apiserver-advertise-address 192.168.2.1
+sudo kubeadm init --token-ttl=0 --pod-network-cidr=10.244.0.0/16
 
-[init] using Kubernetes version: v1.12.2
+[init] using Kubernetes version: ...
 [preflight] running pre-flight checks
         [WARNING SystemVerification]: this Docker version is not on the list of validated versions: 18.04.0-ce. Latest validated version: 18.06
 [preflight/images] Pulling images required for setting up a Kubernetes cluster
@@ -119,7 +115,6 @@ as root:
 
 #### Initialize kubectl configuration
 
-
 As normal user (not root)
 
 ```bash
@@ -129,13 +124,13 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 kubectl get nodes
 ```
 
-#### On the slave node
+### Add worker nodes
 
 ```bash
 kubeadm join 192.168.2.1:6443 --token vej1mx.yyyyyy --discovery-token-ca-cert-hash sha256:xxxxxx
 ```
 
-#### Setup CNI
+### Setup Container Network Interface (CNI)
 
 At that point, nodes are not in ready state yet and CoreDNS in pending state
 
@@ -148,11 +143,7 @@ The kubectl deployment file for flannel and adapted to kubedge is available here
 Note: Be sure to have picked the right branch (arm32v7 or arm64v8) when pulling kube-deployment
 
 ```bash
-cd $HOME
-cp -r proj/kubedge/kubedge_utils/kube-deployment/ .
-
-cd kube-deployment/flannel/
-kubectl apply -f flannel.yaml
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 ```
 
 The nodes should turn ready and CoreDNS should start
@@ -162,52 +153,7 @@ kubectl get nodes
 kubectl get all -n kube-system
 ```
 
-## Kubernetes for ARM64V8
-
-Need to installed version 1.13.1-beta1 compiled with go 1.11 (required)
-
-#### On Master and Slaves
-
-Kubedge team did not automate yet the installation of kubeadm on each node
-
-Install only the kubelet on each node. At the time, 12.2.2 is installed since it is the stable version
-
-```bash
-sudo -i
-
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" > /etc/apt/sources.list.d/kubernetes.list
-apt-get update && apt-get install -y kubelet
-```
-
-```bash
-sudo systemctl stop kubelet
-
-curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.13.0-beta.1/bin/linux/arm64/kubectl
-curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.13.0-beta.1/bin/linux/arm64/kubeadm
-curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.13.0-beta.1/bin/linux/arm64/kubelet
-
-chmod 755 kubectl
-chmod 755 kubeadm
-chmod 755 kubelet
-
-mv kubectl /usr/bin/kubectl
-mv kubeadm /usr/bin/kubeadm
-mv kubelet /usr/bin/kubelet
-```
-
-To help during the initialization phase, get kubeadm to download the images onto docker
-
-```bash
-kubeadm config images pull
-```
-
-#### Initialize the Kubernetes Master node
-
-
-### Kubernetes
-
-#### **Cluster 1**: 5 node clusters
+### 5 node cluster
 
 ~~~
 kubectl get nodes
@@ -224,9 +170,6 @@ kubemaster-pi   Ready     master    23d       v1.9.8
 kubectl get all --all-namespaces
 
 NAMESPACE     NAME                                        READY     STATUS    RESTARTS   AGE
-default       pod/hypriot-587768b4f5-7bqpz                1/1       Running   0          23d
-default       pod/hypriot-587768b4f5-b8xjq                1/1       Running   0          23d
-default       pod/hypriot-587768b4f5-s2mzt                1/1       Running   0          23d
 kube-system   pod/etcd-kubemaster-pi                      1/1       Running   0          23d
 kube-system   pod/kube-apiserver-kubemaster-pi            1/1       Running   0          23d
 kube-system   pod/kube-controller-manager-kubemaster-pi   1/1       Running   0          23d
@@ -245,8 +188,6 @@ kube-system   pod/kube-scheduler-kubemaster-pi            1/1       Running   0 
 kube-system   pod/kubernetes-dashboard-7fcc5cb979-8vbmp   1/1       Running   0          23d
 
 NAMESPACE     NAME                           TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)         AGE
-default       service/hypriot                ClusterIP   10.110.24.241    <none>        80/TCP          23d
-default       service/kubernetes             ClusterIP   10.96.0.1        <none>        443/TCP         23d
 kube-system   service/kube-dns               ClusterIP   10.96.0.10       <none>        53/UDP,53/TCP   23d
 kube-system   service/kubernetes-dashboard   NodePort    10.102.144.189   <none>        443:30383/TCP   23d
 
@@ -255,12 +196,10 @@ kube-system   daemonset.extensions/kube-flannel-ds   5         5         5      
 kube-system   daemonset.extensions/kube-proxy        5         5         5         5            5           <none>                        23d
 
 NAMESPACE     NAME                                         DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-default       deployment.extensions/hypriot                3         3         3            3           23d
 kube-system   deployment.extensions/kube-dns               1         1         1            1           23d
 kube-system   deployment.extensions/kubernetes-dashboard   1         1         1            1           23d
 
 NAMESPACE     NAME                                                    DESIRED   CURRENT   READY     AGE
-default       replicaset.extensions/hypriot-587768b4f5                3         3         3         23d
 kube-system   replicaset.extensions/kube-dns-7b6ff86f69               1         1         1         23d
 kube-system   replicaset.extensions/kubernetes-dashboard-7fcc5cb979   1         1         1         23d
 
@@ -269,71 +208,27 @@ kube-system   daemonset.apps/kube-flannel-ds   5         5         5         5  
 kube-system   daemonset.apps/kube-proxy        5         5         5         5            5           <none>                        23d
 
 NAMESPACE     NAME                                   DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-default       deployment.apps/hypriot                3         3         3            3           23d
 kube-system   deployment.apps/kube-dns               1         1         1            1           23d
 kube-system   deployment.apps/kubernetes-dashboard   1         1         1            1           23d
 
 NAMESPACE     NAME                                              DESIRED   CURRENT   READY     AGE
-default       replicaset.apps/hypriot-587768b4f5                3         3         3         23d
 kube-system   replicaset.apps/kube-dns-7b6ff86f69               1         1         1         23d
 kube-system   replicaset.apps/kubernetes-dashboard-7fcc5cb979   1         1         1         23d
 ~~~
 
-
-#### **Cluster 2**: 3 node clusters
-
-~~~
-kubectl get nodes
-
-NAME        STATUS    ROLES     AGE       VERSION
-home-pi     Ready     <none>    56m       v1.11.0
-master-pi   Ready     master    1h        v1.11.0
-nas-pi      Ready     <none>    5m        v1.11.0
-~~~
-
-~~~
-kubectl get all --all-namespaces
-
-NAMESPACE     NAME                                    READY     STATUS    RESTARTS   AGE
-kube-system   pod/coredns-78fcdf6894-cw5p8            1/1       Running   0          59m
-kube-system   pod/coredns-78fcdf6894-czjcj            1/1       Running   0          1h
-kube-system   pod/etcd-master-pi                      1/1       Running   0          1h
-kube-system   pod/kube-apiserver-master-pi            1/1       Running   0          59m
-kube-system   pod/kube-controller-manager-master-pi   1/1       Running   12         1h
-kube-system   pod/kube-flannel-ds-bhllh               1/1       Running   2          3m
-kube-system   pod/kube-flannel-ds-q7cp2               1/1       Running   0          22m
-kube-system   pod/kube-flannel-ds-wqxsz               1/1       Running   0          22m
-kube-system   pod/kube-proxy-4chwh                    1/1       Running   0          45m
-kube-system   pod/kube-proxy-6r5mn                    1/1       Running   0          3m
-kube-system   pod/kube-proxy-vvj6j                    1/1       Running   0          1h
-kube-system   pod/kube-scheduler-master-pi            1/1       Running   0          59m
-
-NAMESPACE     NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)         AGE
-default       service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP         1h
-kube-system   service/kube-dns     ClusterIP   10.96.0.10   <none>        53/UDP,53/TCP   1h
-
-NAMESPACE     NAME                             DESIRED   CURRENT   READY     UP-TO-DATE   AVAILABLE   NODE SELECTOR                 AGE
-kube-system   daemonset.apps/kube-flannel-ds   3         3         3         3            3           beta.kubernetes.io/arch=arm   53m
-kube-system   daemonset.apps/kube-proxy        3         3         3         3            3           beta.kubernetes.io/arch=arm   1h
-
-NAMESPACE     NAME                      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-kube-system   deployment.apps/coredns   2         2         2            2           1h
-
-NAMESPACE     NAME                                 DESIRED   CURRENT   READY     AGE
-kube-system   replicaset.apps/coredns-78fcdf6894   2         2         2         1h
-~~~
-
 ### Cleanup
 
-cleanup
+Teardown cluster
 
 ```bash
 sudo kubeadm reset
 sudo docker rm $(sudo docker ps -qa)
 sudo docker image rm $(sudo docker image list -qa)
+sudo apt-get purge kubeadm kubectl kubelet
+sudo apt-get autoremove
+sudo rm -rf ~/.kube
 ```
 
 ### Reference Links
 
-- [kubeadm1](https://blog.hypriot.com/post/setup-kubernetes-raspberry-pi-cluster/)
-- [kubeadm2](https://kubecloud.io/setup-a-kubernetes-1-9-0-raspberry-pi-cluster-on-raspbian-using-kubeadm-f8b3b85bc2d1)
+- [Kubeadm on Hypriot](https://blog.hypriot.com/post/setup-kubernetes-raspberry-pi-cluster/)

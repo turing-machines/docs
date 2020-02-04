@@ -7,6 +7,4 @@ chapter = true
 
 # Basics
 
-WIP
-
 {{%children style="h3" description="false" depth="1" sort="weight" %}}
