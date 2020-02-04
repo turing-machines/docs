@@ -3,7 +3,7 @@ layout: post
 title: "Creating a Turing Pi Kubernetes Cluster"
 menuTitle: "Installation"
 weight: 5
-date:   2018-07-03
+date:   2020-02-04
 categories: [wiki]
 description: ""
 thumbnail: "img/placeholder.jpg"

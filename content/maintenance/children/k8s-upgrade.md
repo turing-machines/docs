@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Upgrade RPI Kubernetes cluster to 1.12"
-menuTitle:  "Upgrade to K8s 1.12"
+title:  "Upgrade Kubernetes cluster"
+menuTitle:  "Upgrade k8s"
 weight: 20
-date:   2018-09-29
+date:   2020-02-04
 categories: [wiki, wip]
 description: ""
 thumbnail: "img/placeholder.jpg"
@@ -14,9 +14,6 @@ mathjax: true
 tags: [kubernetes, rpi]
 published: true
 ---
-
-The new Kubernetes 1.12 is out. THe goal is to update my two clusters to 1.12
-using kubeadm 1.12
 
 <!--more-->
 
@@ -407,5 +404,3 @@ nas-pi      Ready    <none>   86d   v1.12.0
 ## Reference Links
 
 - [Official Upgrade documentation](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-12/)
-
-
