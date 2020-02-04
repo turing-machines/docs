@@ -3,7 +3,7 @@ layout: post
 title:  "Deploy Flannel in Turing Pi"
 menuTitle:  "Flannel"
 weight: 15
-date:   2018-07-14
+date:   2020-02-04
 categories: [wiki]
 description: ""
 thumbnail: "img/placeholder.jpg"

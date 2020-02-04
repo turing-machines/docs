@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Add RPI Compute Module node to Turing Pi in 10 min"
-menuTitle: "Add a node"
+title:  "Add Raspberry Pi Compute Module as a worker"
+menuTitle: "Add a worker"
 weight: 20
-date:   2018-06-19
+date:   2020-02-04
 categories: [wiki]
 description: ""
 thumbnail: "img/placeholder.jpg"

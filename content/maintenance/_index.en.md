@@ -1,19 +1,15 @@
 +++
 title = "Helm & Maintenance"
-description = "This is turing_pi/maintenance tutorial page"
+description = "This is Helm & Maintenance tutorial page"
 weight = 15
 chapter = true
 +++
 
-# HELM and Maintenance
+# Helm and Maintenance
 
 Those tutorials describe how to use Helm and associated tools to perform
 rolling upgrades of the applications and of Kubernetes
 
 <!--more-->
 
-![](/images/hack4easy/helm_ls.png)
-
 {{%children style="h3" description="false" depth="1" sort="weight" %}}
-
-![](/images/hack4easy/oss.png)

@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Upgrade Kubernetes cluster"
-menuTitle:  "Upgrade k8s"
+title:  "Upgrade Kubernetes"
+menuTitle:  "Upgrade Kubernetes"
 weight: 20
 date:   2020-02-04
 categories: [wiki, wip]

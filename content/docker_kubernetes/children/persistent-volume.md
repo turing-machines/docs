@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Add Persistency Volume to Turing Pi"
-menuTitle:  "Persistency Volume"
+title:  "Add Persistent Volume to Turing Pi"
+menuTitle:  "Persistent Volume"
 weight: 10
-date:   2018-07-08
+date:   2020-02-04
 categories: [wiki, wip]
 description: ""
 thumbnail: "img/placeholder.jpg"
