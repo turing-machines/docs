@@ -15,7 +15,7 @@ tags: [turing_pi, faq]
 published: true
 ---
 
-### 1. What model Raspberry Pi is in this?
+### 1. Which Raspberry Pi are supported?
 
 Supported models with eMMC and without
 
