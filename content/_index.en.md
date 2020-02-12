@@ -23,7 +23,7 @@ Specs:
 Features:
 
 - Flash mode - flash RPi compute modules through the board
-- Boot mode - boot OS through eMMC or SD card
+- Boot mode - boot OS through eMMC or SD card or netboot
 - Power management for each node (on/off/reboot)
 - Real-time clock (RTC)
 - I2C cluster management bus
