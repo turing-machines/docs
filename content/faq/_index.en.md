@@ -15,40 +15,48 @@ tags: [turing_pi, faq]
 published: true
 ---
 
-### 1. Which Raspberry Pi are supported?
+### 1. Which Raspberry Pi models are compatible?
 
-Supported models with eMMC and without
+Turing Pi supports the following models with and without eMMC
 
 - [Raspberry Pi Compute Module 1](https://www.raspberrypi.org/products/compute-module-1/)
 - [Raspberry Pi Compute Module 3](https://www.raspberrypi.org/products/compute-module-3/)
 - [Raspberry Pi Compute Module 3+](https://www.raspberrypi.org/products/compute-module-3-plus/)
 
-### 2. Будет ли поддержка Raspberry Pi 4?
+### 2. Does the board support the new Rasberry pi 4?
 
-Как только поступят в продажу Raspberry Pi 4 Compute Modules в короткие сроки будет версия платы с их поддержкой
+There is no Compute Model for the Raspberry pi 4th generation yet
 
 ### 3. How to the compute modules communicate with each other?
 
-We use onboard 1 Gbps Ethernet switch within the nodes. Also, each node can exchange some tech info thought the I2C bus with each other, including Real-Time Clock (RTC)
+The nodes interconnected with the onboard 1 Gbps switch. However, each node is limited with 100 Mbps USB speed. Also, there is an I2C bus to exchange some technical information between nodes, including Real-Time Clock (RTC).
 
-### 4. Поддерживается ли прошивка Compute Modules через кластер?
+### 4. From where the cluster board boots OS?
 
-Yes. Only for the master node.
+You can boot the OS either from eMMC or SD card. 
 
-### 5. USB connections to individual boards or is there a 1 Gbps switch or?
-
-По два вертикальных USB подсоединены каждый к своей ноде. Если смотреть со стороны портов: правый первый USB подсоединенем к мастер ноде, второй с ethernet ко второй ноде, третий к четвертой ноде и четвертый к шестой ноде
-
-### 6. I see ATX DC 12V power ports. Does this mean it can function from either an ATX power supply or 12V?
+### 5. Does each node get its own IP address?
 
 Yes
 
-### 7. Guys what is the purpose of these things?
+### 6. Can I flash compute modules through the board?
 
-Kind of
+Yes, you can flash a compute module using a top/master node.
 
-- To prototype and learn clustering applications and practices
-- Host at the edge Kubernetes (k8s, k3s), Docker, TensorFlow, Caffe and other beauties of microservice architecture
-- Home education lab
-- Compute node for IoT purposes
-- Home automation server
+### 7. How do the Ethernet, USB, HDMI, and audio ports work? Is there a way to switch them between nodes?
+Each pair of USB connected to a particular node. HDMI and audio connected with a top/master node. Ethernet connected with a second node. 
+
+### 8. There are ATX and DC 12V power ports on the cluster board. Does this mean it can function from either an ATX power supply or 12V?
+Yes
+
+### 7. What ca I do with the board?
+
+- Edge gateway and application hosting
+- Homelab
+- Develop and learn cloud-native technologies (Kubernetes, Docker, Serverless, Microservices) on bare metal
+- Cloud-native apps testing environment
+- Learn concepts of distributed Machine Learning apps
+- Hosting and managing IoT apps
+- Prototype and learn cluster applications, parallel computing, and distributed computing concepts on bare metal
+- Host Minecraft 
+
