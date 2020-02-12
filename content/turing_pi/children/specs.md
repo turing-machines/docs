@@ -41,7 +41,7 @@ Turing Pi specifications
 | Node Network Speed                  | 100Mbps per node                         |
 | Power                               | 12-18 V, 3-5 A                           |
 | Power consumption, Max.             | 40 W                                     |
-| Board form factor                   | Mini ITX, 170 x 170 mm                   |
+| Board form factor                   | Mini ITX, 6.7 x 6.7 inches (170 x 170 mm)|
 | Mini ITX Power socket 2x2 pin       | 12 V                                     |
 | Flash port                          | Only for Master Node via micro USB       |
 | GPIO 40-pin, RPI compatible pinout  | 7x                                       |
