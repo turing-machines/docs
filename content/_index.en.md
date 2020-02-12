@@ -9,46 +9,44 @@ chapter = true
 
 ## Personal, Mobile Edge Computers and Lab
 
-Turing Pi is personal and mobile edge cloud. The
-key concept is to leverage the 7 network
-interfaces available on each Raspberry Pi Compute Module.
+Turing Pi is a private mobile cloud in a mini ITX form factor. It’s a scale model of bare metal clusters like you see in data centers. Turing Pi cluster board can scale up to 7 compute nodes.
+
+Specs:
+
+- 1 Gbps Ethernet
+- 7 x 40 pin GPIO
+- Multiple USB
+- HDMI, Audio jack, ATX
+- Up to 28 cores
+- Up to 7 GB RAM
+
+Features:
+
+- Flash mode - flash RPi compute modules through the board
+- Boot mode - boot OS through eMMC or SD card
+- Power management for each node (on/off/reboot)
+- Real-time clock (RTC)
+- I2C cluster management bus
 
 ![](https://turingpi.com/img/index-turingpi-clusteboard-1.svg?1)
 
-The Raspberry Pi Compute Modules are interconnected together using the onboard
-1 Gbps switch. The Turing top/master node is acting as a NAT/Router
-for the rest of the compute modules. This main advantage that
-when you move your cluster from home to work, all the IPs
-of the cluster stay identical.
+Turing Pi cluster board could be an excellent fit for the following use cases:
 
-Next step is to install the OS. Immediatly you will realize that it is unpracticle
-to plug each node one after the other to an HDMI screen, USB mouse and keyboard in
-order to perform the first initalization. Some of the OS such Hypriot OS have the
-great idea to preconfigure the node with SSH enabled, docker. This makes every plug
-and play: Flush your SD card, connect the PI to your home router and voila you just
-have to SSH.
+- Edge apps hosting
+- Homelab
+- Develop and learn cloud-native technologies like Kubernetes, Docker, Serverless, Microservices on bare metal
+- Cloud-native apps testing environment
+- Learn concepts of distributed Machine Learning apps
+- Hosting and managing IoT apps
+- Prototype and learn cluster applications, parallel computing, and distributed computing concepts on bare metal
 
-Then you will have to learn how to create a NAT and DHCP server on your master node.
+The Turing Pi top/master node can act as a NAT/Router for the rest of the nodes.
+The main advantage is that if you move the cluster from one location to another, all the nodes IPs stay identical.
+The next thing is when you set up the operating system, you immediately realize how unpractical it is to plug
+in each module into a master node and connect display via HDMI, as well as connect USB mouse
+and keyboard to perform the first initialization. However, the Hypriot OS and some other OS
+preconfigure nodes with SSH enabled Docker container and makes it super easy to setup each node using SSH.
 
-The bigger your cluster the quicker you will realize that some of the operations
-are repetitiv, hence the need for automation. The easiet one to learn is ansible.
-Put if you install everything on the OS directly, then start the issue of maintaining the OS.
-Because Hypriot OS comes by default with docker, which brings us back to lesson 1: Have everything
-has a container.
-
-The defacto tools to manage a multi node docker cluster is currently kubernetes. By using
-kubeadm the installation is quite simple as long as you pay attention that the images pulled
-by kubernetes are actually the one for PI and not the one for your usual cloud.
-
-For people with Kubernetes experience (for instance on GCP), this is where the real lessons start:
-- A lot of the software is not available by default on PI. How do you recompile calico, tiller...for the PI.
-- It is much easier to install components using the Kubernetes HELM but a lot of the helm charts are pulling the AMD64 version of the ARM image.
-- Finally, how do you create your own helm chart repository using github so that you can run a clean helm add repo and helm install commands.
-
-And mainly, you will started to appreciate go and the new Java 9 modules to actually create true microservices
-Because both language have the ability to create standalone executables, which in turn allow to create containers starting from "scratch".
-Compare it with a python container and you will understand very quickly why it is beneficial. The PI only has 1G of RAM...which helps to understand
-the interest of having slim true microservices.
 
 <!--more-->
 

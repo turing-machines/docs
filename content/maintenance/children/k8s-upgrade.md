@@ -15,6 +15,8 @@ tags: [kubernetes, rpi]
 published: true
 ---
 
+Upgrade tutorial
+
 <!--more-->
 
 ## Master node upgrade using kubeadm

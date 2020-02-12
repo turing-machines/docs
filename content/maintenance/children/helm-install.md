@@ -15,7 +15,7 @@ tags: [kubernetes, helm]
 published: true
 ---
 
-Use Helm & Tiller on the Turing PI Cluster.
+Use Helm & Tiller on the Turing PI Cluster
 
 <!--more-->
 

@@ -67,4 +67,3 @@ Turing Pi specifications
 ## Reference Links
 
 - [Cluster Management Bus](/turing_pi/children/i2c_cluster_bus/)
-- [Buy Turing Pi](https://turingpi.com/preorder.html)
