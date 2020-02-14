@@ -44,7 +44,7 @@ Yes
 Yes, you can flash a compute module using a top/master node.
 
 #### 7. How do the Ethernet, USB, HDMI, and audio ports work? Is there a way to switch them between nodes?
-Each pair of USB connected to a particular node. HDMI and audio connected with a top/master node. Ethernet connected with a second node.
+Each pair of USB connected to a particular node. HDMI and audio connected with a top/master node. 
 
 #### 8. There are ATX and DC 12V power ports on the cluster board. Does this mean it can function from either an ATX power supply or 12V?
 Yes
