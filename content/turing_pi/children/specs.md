@@ -21,7 +21,7 @@ Turing Pi specifications
 
 ## Scheme
 
-![](https://turingpi.com/img/index-scheme.svg)
+![](https://turingpi.com/assets/img/scheme/scheme.svg)
 
 ## Overview
 
