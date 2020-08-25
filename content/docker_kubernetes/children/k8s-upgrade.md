@@ -19,7 +19,7 @@ Upgrade tutorial
 
 <!--more-->
 
-## Master node upgrade using kubeadm
+## Control plane node upgrade using kubeadm
 
 ```bash
 # apt-mark unhold kubeadm && \
@@ -235,7 +235,7 @@ Client Version: version.Info{Major:"1", Minor:"12", GitVersion:"v1.12.0", GitCom
 Server Version: version.Info{Major:"1", Minor:"12", GitVersion:"v1.12.0", GitCommit:"0ed33881dc4355495f623c6f22e7dd0b7632b7c0", GitTreeState:"clean", BuildDate:"2018-09-27T16:55:41Z", GoVersion:"go1.10.4", Compiler:"gc", Platform:"linux/arm"}
 ```
 
-## Upgrade kubelet on master node
+## Upgrade kubelet on control plane node
 
 ```bash
 $ sudo apt-get upgrade -y kubelet
@@ -315,7 +315,8 @@ kube-scheduler-master-pi                1/1     Running   1          17m
 kubernetes-dashboard-7d59788d44-rchkk   1/1     Running   25         83d
 tiller-deploy-b59fcc885-dbvlv           1/1     Running   0          60d
 ```
-## Update first slave node
+
+## Update first worker node
 
 ```bash
 sudo apt-get clean
@@ -357,7 +358,7 @@ kube-flannel-ds-4495g                   1/1     Running   11         75d
 ...
 ```
 
-### Other slave node
+### Other worker node
 
 ```
 sudo apt-get clean

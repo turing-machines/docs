@@ -24,7 +24,7 @@ Building Kubernetes on top of Turing Pi brings another dimension to the edge com
 - Assemble a Turing Pi Cluster
 - Deploy Kubernetes on Turing Pi
 
-### Prepare master and workers
+### Prepare control-plane and workers
 
 ```bash
 sudo -i
@@ -42,7 +42,7 @@ To help during the initialization phase, get kubeadm to download the images onto
 kubeadm config images pull
 ```
 
-### Initialize the Kubernetes master node
+### Initialize the Kubernetes control-plane node
 
 ```bash
 sudo kubeadm init --token-ttl=0 --pod-network-cidr=10.244.0.0/16
@@ -56,21 +56,21 @@ sudo kubeadm init --token-ttl=0 --pod-network-cidr=10.244.0.0/16
 [kubelet] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
 [kubelet] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
 [preflight] Activating the kubelet service
-[certificates] Generated ca certificate and key.
-[certificates] Generated apiserver-kubelet-client certificate and key.
-[certificates] Generated apiserver certificate and key.
-[certificates] apiserver serving cert is signed for DNS names [kubemaster-pi kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.1]
-[certificates] Generated front-proxy-ca certificate and key.
-[certificates] Generated front-proxy-client certificate and key.
-[certificates] Generated etcd/ca certificate and key.
-[certificates] Generated etcd/peer certificate and key.
-[certificates] etcd/peer serving cert is signed for DNS names [kubemaster-pi localhost] and IPs [192.168.2.1 127.0.0.1 ::1]
-[certificates] Generated etcd/server certificate and key.
-[certificates] etcd/server serving cert is signed for DNS names [kubemaster-pi localhost] and IPs [127.0.0.1 ::1]
-[certificates] Generated etcd/healthcheck-client certificate and key.
-[certificates] Generated apiserver-etcd-client certificate and key.
-[certificates] valid certificates and keys now exist in "/etc/kubernetes/pki"
-[certificates] Generated sa key and public key.
+[certs] Generated ca certificate and key.
+[certs] Generated apiserver-kubelet-client certificate and key.
+[certs] Generated apiserver certificate and key.
+[certs] apiserver serving cert is signed for DNS names [kubemaster-pi kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.1]
+[certs] Generated front-proxy-ca certificate and key.
+[certs] Generated front-proxy-client certificate and key.
+[certs] Generated etcd/ca certificate and key.
+[certs] Generated etcd/peer certificate and key.
+[certs] etcd/peer serving cert is signed for DNS names [kubemaster-pi localhost] and IPs [192.168.2.1 127.0.0.1 ::1]
+[certs] Generated etcd/server certificate and key.
+[certs] etcd/server serving cert is signed for DNS names [kubemaster-pi localhost] and IPs [127.0.0.1 ::1]
+[certs] Generated etcd/healthcheck-client certificate and key.
+[certs] Generated apiserver-etcd-client certificate and key.
+[certs] valid certificates and keys now exist in "/etc/kubernetes/pki"
+[certs] Generated sa key and public key.
 [kubeconfig] Wrote KubeConfig file to disk: "/etc/kubernetes/admin.conf"
 [kubeconfig] Wrote KubeConfig file to disk: "/etc/kubernetes/kubelet.conf"
 [kubeconfig] Wrote KubeConfig file to disk: "/etc/kubernetes/controller-manager.conf"
@@ -84,8 +84,8 @@ sudo kubeadm init --token-ttl=0 --pod-network-cidr=10.244.0.0/16
 [apiclient] All control plane components are healthy after 88.010108 seconds
 [uploadconfig] storing the configuration used in ConfigMap "kubeadm-config" in the "kube-system" Namespace
 [kubelet] Creating a ConfigMap "kubelet-config-1.12" in namespace kube-system with the configuration for the kubeletsin the cluster
-[markmaster] Marking the node kubemaster-pi as master by adding the label "node-role.kubernetes.io/master=''"
-[markmaster] Marking the node kubemaster-pi as master by adding the taints [node-role.kubernetes.io/master:NoSchedule]
+[mark-control-plane] Marking the node kubemaster-pi as control-plane by adding the label "node-role.kubernetes.io/master=''"
+[mark-control-plane] Marking the node kubemaster-pi as control-plane by adding the taints [node-role.kubernetes.io/master:NoSchedule]
 [patchnode] Uploading the CRI Socket information "/var/run/dockershim.sock" to the Node API object "kubemaster-pi" asan annotation
 [bootstraptoken] using token: vej1mx.6qf2xljr39rr1i14
 [bootstraptoken] configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials
@@ -95,7 +95,7 @@ sudo kubeadm init --token-ttl=0 --pod-network-cidr=10.244.0.0/16
 [addons] Applied essential addon: CoreDNS
 [addons] Applied essential addon: kube-proxy
 
-Your Kubernetes master has initialized successfully!
+Your Kubernetes control-plane has initialized successfully!
 
 To start using your cluster, you need to run the following as a regular user:
 
