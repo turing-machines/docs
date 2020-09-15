@@ -27,7 +27,8 @@ Add dtoverlay to /boot/config.txt and save
 dtoverlay=i2c1-bcm2708,sda1_pin=44,scl1_pin=45,pin_func=6
 dtoverlay=i2c-rtc,mcp7940x
 ```
-Enable I2C interface in `raspi-config` -> Interfacing Options -> I2C and reboot
+Enable I2C interface in `raspi-config` -> Interfacing Options -> I2C or run `sudo raspi-config nonint do_i2c 1` and reboot 
+
 
 Check everything is fine with I2C and RTC
 
