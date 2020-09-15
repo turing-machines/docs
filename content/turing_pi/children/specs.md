@@ -39,7 +39,7 @@ Turing Pi specifications
 | Ethernet Port                       | 1x, 1Gbps                                |
 | Int. Network Speed, Max.            | 1Gbps                                    |
 | Node Network Speed                  | 100Mbps per node                         |
-| Power                               | 12-16 V, 3-5 A                           |
+| Power                               | 12V, 5A, 60 W, 2.1-5.5mm                           |
 | Power consumption, Max.             | 40 W                                     |
 | Board form factor                   | Mini ITX, 6.7 x 6.7 inches (170 x 170 mm)|
 | Mini ITX Power socket 2x2 pin       | 12 V                                     |
