@@ -48,6 +48,7 @@ Turing Pi specifications
 | HDMI                                | 1x, Node #1 (Master Node)                |
 | Audio 3.5 mm                        | 1x, Node #1 (Master Node)                |
 | USB 2.0                             | 8x                                       |
+| RTC battery size                    | CR2032                                   |
 
 ## Cluster Management Bus (CMB)
 
