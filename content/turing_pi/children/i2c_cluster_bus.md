@@ -80,7 +80,7 @@ i2cget [-f] [-y] 1 <DEVICE_ADDRESS> <ADDRESS> [MODE]
 - -f force access to the device even if the device is still busy. However, be careful. This can cause the i2cget command to return an invalid value. We recommend avoiding this option.
 - -y disable interactive mode. Using this command will skip the prompt for confirmation from the i2cget command. By default, it will wait for the confirmation from the user before interacting with the I2C device.
 - DEVICE_ADDRESS is an I2C bus address (e.g 0x04h)
-- ADDRESS is the address on the slave from which to read data (eg. 0x00h)
+- ADDRESS is the address on the worker from which to read data (eg. 0x00h)
 
 The optional MODE can be one of the following:
 

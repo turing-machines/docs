@@ -82,7 +82,7 @@ Firt access the kubemaster node and regenerate a token (if you did not use ttl=0
 kubeadm token create
 ```
 
-### On New Slave PI
+### On New Worker PI
 
 ```bash
 sudo -i
