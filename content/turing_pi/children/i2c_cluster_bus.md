@@ -24,7 +24,7 @@ Turing Pi cluster management bus configuration, security and internal devices
 Add dtoverlay to /boot/config.txt and save
 
 ```
-dtoverlay=i2c1-bcm2708,sda1_pin=44,scl1_pin=45,pin_func=6
+dtoverlay=i2c1,pins_44_45
 dtoverlay=i2c-rtc,mcp7940x
 ```
 Enable I2C interface in `raspi-config` -> Interfacing Options -> I2C and reboot
